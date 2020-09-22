@@ -1,0 +1,104 @@
+<?php
+return [
+    '@class' => 'Gantry\\Component\\File\\CompiledYamlFile',
+    'filename' => '/domains1/gh43616200/public/www_root/user/data/gantry5/themes/rt_zenith/config/pages_-_offline/index.yaml',
+    'modified' => 1600759173,
+    'data' => [
+        'name' => 'pages_-_offline',
+        'timestamp' => 1600164245,
+        'version' => 7,
+        'preset' => [
+            'image' => 'gantry-admin://images/layouts/default.png',
+            'name' => 'default',
+            'timestamp' => 1554457514
+        ],
+        'positions' => [
+            'sidebar' => 'Sidebar',
+            'aside' => 'Aside'
+        ],
+        'sections' => [
+            'bodysidebar' => 'Body Sidebar',
+            'top' => 'Top',
+            'navigation' => 'Navigation',
+            'slideshow' => 'Slideshow',
+            'above' => 'Above',
+            'feature' => 'Feature',
+            'showcase' => 'Showcase',
+            'utility' => 'Utility',
+            'expanded' => 'Expanded',
+            'extension' => 'Extension',
+            'bottom' => 'Bottom',
+            'copyright' => 'Copyright',
+            'header' => 'Header',
+            'sidebar' => 'Sidebar',
+            'aside' => 'Aside',
+            'mainbar' => 'Main',
+            'footer' => 'Footer',
+            'offcanvas' => 'Offcanvas'
+        ],
+        'particles' => [
+            'simplecontent' => [
+                'simplecontent-1290' => 'Header - Offline',
+                'simplecontent-5054' => 'Box s popisem pod logem'
+            ],
+            'custom' => [
+                'custom-2951' => 'Make your Grav site offline'
+            ],
+            'logo' => [
+                'logo-7158' => 'Logo / Image'
+            ],
+            'verticalmenu' => [
+                'verticalmenu-4954' => 'Vertikální nabídka'
+            ],
+            'social' => [
+                'social-1656' => 'Sociální sítě'
+            ],
+            'messages' => [
+                'system-messages-5684' => 'System Messages'
+            ],
+            'position' => [
+                'position-position-2574' => 'Sidebar',
+                'position-position-9338' => 'Aside'
+            ],
+            'content' => [
+                'system-content-9452' => 'Page Content'
+            ],
+            'simplemenu' => [
+                'simplemenu-1305' => 'Simple Menu',
+                'simplemenu-6908' => 'Simple Menu',
+                'simplemenu-7241' => 'Simple Menu'
+            ],
+            'copyright' => [
+                'copyright-1715' => 'Copyright'
+            ],
+            'mobile-menu' => [
+                'mobile-menu-4382' => 'Mobile Menu'
+            ]
+        ],
+        'inherit' => [
+            'default' => [
+                'bodysidebar' => 'bodysidebar',
+                'top' => 'top',
+                'sidebar' => 'sidebar',
+                'mainbar' => 'mainbar',
+                'aside' => 'aside',
+                'footer' => 'footer',
+                'copyright' => 'copyright',
+                'offcanvas' => 'offcanvas',
+                'logo-7158' => 'logo-9680',
+                'simplecontent-5054' => 'simplecontent-7568',
+                'verticalmenu-4954' => 'verticalmenu-2655',
+                'social-1656' => 'social-9516',
+                'system-messages-5684' => 'system-messages-9828',
+                'position-position-2574' => 'position-position-9414',
+                'system-content-9452' => 'system-content-1120',
+                'position-position-9338' => 'position-position-8807',
+                'simplemenu-1305' => 'simplemenu-2324',
+                'simplemenu-6908' => 'simplemenu-8319',
+                'simplemenu-7241' => 'simplemenu-2461',
+                'copyright-1715' => 'copyright-6444',
+                'mobile-menu-4382' => 'mobile-menu-2576'
+            ]
+        ]
+    ]
+];

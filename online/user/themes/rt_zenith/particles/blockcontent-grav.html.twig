@@ -1,0 +1,80 @@
+{# Load Content From Grav #}
+{% set attr_extra = particle.extra|attribute_array %}
+{% set article_settings = particle.article %}
+{% set filter = article_settings.filter %}
+{% set sort = article_settings.sort %}
+{% set limit = article_settings.limit %}
+{% set start = limit.start %}
+{% set display = article_settings.display %}
+{% set categories = filter.categories|split(' ') %}
+{% set collection = grav.page.collection(
+    {
+        items: {'@taxonomy.category': categories},
+        order: {by: sort.orderby, dir: sort.ordering},
+        url_taxonomy_filters: false
+    },
+    false) %}
+{% set total = collection.count() %}
+{% set pages = collection.slice(start, limit.total) %}
+
+{% for page in pages %}
+    {% if display.image.enabled %}
+        {% if display.image.enabled == 'intro' %}
+            {% set file = page.header.image.summary.enabled|defined(false) ? (page.header.image.summary.file ?: true) %}
+        {% elseif display.image.enabled == 'full' %}
+            {% set file = page.header.image.text.enabled|defined(false) ? (page.header.image.text.file ?: true) %}
+        {% endif %}
+
+        {% set image = file is same as(true) ? page.media.images|first : (file ? page.media.images[file]) %}
+    {% endif %}
+
+    {% if loop.index % 3 == 0 %}
+        {% set accent = 'accent1' %}
+    {% elseif loop.index % 3 == 2 %}
+        {% set accent = 'accent2' %}
+    {% else %}
+        {% set accent = 'accent3' %}
+    {% endif %}
+
+    <div class="g-block g-blockcontent-subcontent-block {{ subcontent.class }} g-blockcontent-subcontent-block-{{ accent }}">
+        <div class="g-content g-blockcontent-subcontent-block-content">
+
+            {% if image %}
+                <a data-rel="lightcase" title="{{ page.title|e }}" href="{{ image.url }}">
+                    <img src="{{ image.url }}" class="g-blockcontent-subcontent-img" alt="{{ page.title|e }}"/>
+                </a>
+            {% endif %}
+
+            <h5 class="g-blockcontent-subcontent-subtitle">
+                {{ categories|join(' ') }}
+            </h5>
+
+            {% if display.title.enabled and page.title %}
+                <h4 class="g-blockcontent-subcontent-title">
+                    <span class="g-blockcontent-subcontent-title-text">
+                        {{ (display.title.limit ? page.title|e|truncate_text(display.title.limit) : page.title|e)|raw }}
+                    </span>
+                </h4>
+            {% endif %}
+
+            {% if not display.text.type == '' %}
+                <div class="g-blockcontent-subcontent-desc">
+                    {% set page_text = display.text.type == 'intro' ? page.summary : page.content %}
+                    <p class="g-slider-carousel-description">
+                        {% if display.text.formatting == 'text' %}
+                            {{ page_text|truncate_text(display.text.limit)|raw }}
+                        {% else %}
+                            {{ page_text|truncate_html(display.text.limit)|raw }}
+                        {% endif %}
+                    </p>
+                </div>
+            {% endif %}
+
+            {% if display.link.enabled %}
+                <p class="g-blockcontent-buttons">
+                    <a href="{{ page.url|e }}" target="{{ display.link.target|default('_self') }}" class="button link">{{ display.link.label|default('Explore Now') }}</a>
+                </p>
+            {% endif %}
+        </div>
+    </div>
+{% endfor %}

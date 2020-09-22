@@ -1,0 +1,145 @@
+{# Load Content From Grav #}
+{% set attr_extra = particle.extra|attribute_array %}
+{% set article_settings = particle.article %}
+{% set filter = article_settings.filter %}
+{% set sort = article_settings.sort %}
+{% set limit = article_settings.limit %}
+{% set start = limit.start %}
+{% set display = article_settings.display %}
+{% set categories = filter.categories|split(' ') %}
+{% set collection = grav.page.collection(
+    {
+        items: {'@taxonomy.category': categories},
+        order: {by: sort.orderby, dir: sort.ordering},
+        url_taxonomy_filters: false
+    },
+    false) %}
+{% set total = collection.count() %}
+{% set pages = collection.slice(start, limit.total) %}
+
+<div id="{{ id }}" class="g-swiper swiper-container {{ particle.class|e }}" data-swiper-id="{{ id }}" {{ swiper_settings }} {{ swiper_slides }} {{ swiper_thumbs }} {{ swiper_breakpoints }} {% if gantry.page.direction == 'rtl' %}dir="rtl"{% endif %}>
+    <div class="g-swiper-slider swiper-wrapper" style="height: {{ particle.height|default('70vh') }};">
+        {% for page in pages %}
+            {% if display.image.enabled %}
+                {% if display.image.enabled == 'intro' %}
+                    {% set file = page.header.image.summary.enabled|defined(false) ? (page.header.image.summary.file ?: true) %}
+                {% elseif display.image.enabled == 'full' %}
+                    {% set file = page.header.image.text.enabled|defined(false) ? (page.header.image.text.file ?: true) %}
+                {% endif %}
+
+                {% set image = file is same as(true) ? page.media.images|first : (file ? page.media.images[file]) %}
+            {% endif %}
+
+            <div class="swiper-slide">
+                {% if particle.slides_linkable == "enabled" %}
+                    <a href="{{ page.url|e }}" target="{{ display.link.target|default('_self') }}" class="swiper-link-overlay"></a>
+                {% endif %}
+                {% if display.image.enabled and image %}
+                    {% if particle.image == "img" %}
+                        <img src="{{ url(image.url)|e }}" />
+                    {% else %}    
+                        <div class="swiper-bg" style="background-image: url({{ url(image.url)|e }});"></div>
+                    {% endif %}
+                {% endif %}
+                <div class="slide">
+                    <div class="slide-content-wrapper">
+                        <div class="slide-content">
+
+                            {% if display.title.enabled and page.title %}
+                                <div class="g-swiper-title">
+                                    {{ (display.title.limit ? page.title|e|truncate_text(display.title.limit) : page.title|e)|raw }}
+                                </div>
+                            {% endif %}
+
+
+                            {% if display.text.type != '' %}
+                                <div class="g-swiper-text">
+                                    {% set page_text = display.text.type == 'intro' ? page.summary : page.content %}
+                                    {{ page_text|truncate_text(display.text.limit)|raw }}
+                                </div>
+                            {% endif %}
+
+                            {% if display.link.enabled %}
+                                <a href="{{ page.url|e }}" target="{{ display.link.target|default('_self') }}" class="button">{{ display.link.label|default('Read More') }}</a>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if particle.nav == 'enabled' %}
+        {% if gantry.page.direction == 'rtl' %}
+            <div class="swiper-navigation rtl">
+                <div class="swiper-button-next-{{ id|replace({'swiper-': ''}) }}">
+                    <i class="fa fa-angle-left"></i>
+                </div>
+                <div class="swiper-button-prev-{{ id|replace({'swiper-': ''}) }}">
+                    <i class="fa fa-angle-right"></i>
+                </div>
+            </div>
+        {% else %}
+            <div class="swiper-navigation">
+                <div class="swiper-button-next-{{ id|replace({'swiper-': ''}) }}">
+                    <i class="fa fa-angle-right"></i>
+                </div>
+                <div class="swiper-button-prev-{{ id|replace({'swiper-': ''}) }}">
+                    <i class="fa fa-angle-left"></i>
+                </div>
+            </div>
+        {% endif %}
+    {% endif %}
+    {% if particle.pagination %}
+        <!-- pagination -->
+        <div class="swiper-pagination-parent-{{ id|replace({'swiper-': ''}) }}"></div>
+    {% endif %}
+</div>
+
+{% if particle.thumbs == 'enabled' %}
+    <div id="{{ id }}-thumbs" class="g-swiper-thumbs swiper-container gallery-thumbs">
+        <div class="swiper-wrapper">
+            {% for page in pages %}
+                {% if display.image.enabled %}
+                    {% if display.image.enabled == 'intro' %}
+                        {% set file = page.header.image.summary.enabled|defined(false) ? (page.header.image.summary.file ?: true) %}
+                    {% elseif display.image.enabled == 'full' %}
+                        {% set file = page.header.image.text.enabled|defined(false) ? (page.header.image.text.file ?: true) %}
+                    {% endif %}
+
+                    {% set image = file is same as(true) ? page.media.images|first : (file ? page.media.images[file]) %}
+                {% endif %}
+                <div class="swiper-slide" style="background-image: url({{ url(image.url)|e }});">
+                    {% if display.title.enabled and page.title %}
+                        <div class="g-swiper-thumbs-title">
+                            <span>{{ (display.title.limit ? page.title|e|truncate_text(display.title.limit) : page.title|e)|raw }}</span>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+
+        {% if particle.thumbsnav == 'enabled' %}                 
+            {% if gantry.page.direction == 'rtl' %}
+                <div class="swiper-navigation rtl">
+                    <div class="swiper-thumbs-button-next">
+                        <i class="fa fa-angle-left"></i>
+                    </div>
+                    <div class="swiper-thumbs-button-prev">
+                        <i class="fa fa-angle-right"></i>
+                    </div>
+                </div>
+            {% else %}
+                <div class="swiper-navigation">
+                    <div class="swiper-thumbs-button-next">
+                        <i class="fa fa-angle-right"></i>
+                    </div>
+                    <div class="swiper-thumbs-button-prev">
+                        <i class="fa fa-angle-left"></i>
+                    </div>
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endif %}

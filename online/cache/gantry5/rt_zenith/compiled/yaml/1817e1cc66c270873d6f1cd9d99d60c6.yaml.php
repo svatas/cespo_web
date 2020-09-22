@@ -1,0 +1,341 @@
+<?php
+return [
+    '@class' => 'Gantry\\Component\\File\\CompiledYamlFile',
+    'filename' => '/domains1/gh43616200/public/www_root/user/themes/rt_zenith/particles/blockcontent.yaml',
+    'modified' => 1600161768,
+    'data' => [
+        'name' => 'Block Content',
+        'description' => 'Displays Block Content',
+        'type' => 'particle',
+        'icon' => 'fa-th-large',
+        'configuration' => [
+            'caching' => [
+                'type' => 'static'
+            ]
+        ],
+        'form' => [
+            'overrideable' => false,
+            'fields' => [
+                'enabled' => [
+                    'type' => 'input.checkbox',
+                    'label' => 'Enabled',
+                    'description' => 'Globally enable particle.',
+                    'default' => true
+                ],
+                '_tabs' => [
+                    'type' => 'container.tabs',
+                    'fields' => [
+                        '_tab_settings' => [
+                            'label' => 'Settings',
+                            'overridable' => false,
+                            'fields' => [
+                                'source' => [
+                                    'overridable' => false,
+                                    'type' => 'select.select',
+                                    'label' => 'Content Source',
+                                    'description' => 'Choose if the content should be loaded from the platform or particle itself.',
+                                    'default' => 'particle',
+                                    'options' => [
+                                        'particle' => 'Particle',
+                                        'grav' => 'Grav'
+                                    ]
+                                ],
+                                'class' => [
+                                    'type' => 'input.selectize',
+                                    'label' => 'CSS Classes',
+                                    'description' => 'CSS class name for the particle.'
+                                ],
+                                'title' => [
+                                    'type' => 'input.text',
+                                    'label' => 'Title',
+                                    'description' => 'Customize the title text.',
+                                    'placeholder' => 'Enter title'
+                                ],
+                                'icon' => [
+                                    'type' => 'input.icon',
+                                    'label' => 'Icon',
+                                    'description' => 'Select the icon.'
+                                ],
+                                'image' => [
+                                    'type' => 'input.imagepicker',
+                                    'label' => 'Image',
+                                    'description' => 'Select the main image.'
+                                ],
+                                'headline' => [
+                                    'type' => 'input.text',
+                                    'label' => 'Headline',
+                                    'description' => 'Customize the headline text.',
+                                    'placeholder' => 'Enter headline'
+                                ],
+                                'description' => [
+                                    'type' => 'textarea.textarea',
+                                    'label' => 'Description',
+                                    'description' => 'Customize the description.',
+                                    'placeholder' => 'Enter short description'
+                                ],
+                                'linktext' => [
+                                    'type' => 'input.text',
+                                    'label' => 'Button Label',
+                                    'description' => 'Customize the button label.'
+                                ],
+                                'link' => [
+                                    'type' => 'input.text',
+                                    'label' => 'Button Link',
+                                    'description' => 'Specify the button link address.'
+                                ],
+                                'linkclass' => [
+                                    'type' => 'input.selectize',
+                                    'label' => 'Button Classes',
+                                    'description' => 'CSS class names for the button.'
+                                ],
+                                'linktarget' => [
+                                    'type' => 'select.selectize',
+                                    'label' => 'Target',
+                                    'description' => 'Target browser window when item is clicked.',
+                                    'placeholder' => 'Select...',
+                                    'options' => [
+                                        '_self' => 'Self',
+                                        '_blank' => 'New Window'
+                                    ]
+                                ]
+                            ]
+                        ],
+                        '_tab_collection' => [
+                            'label' => 'Particle Items',
+                            'overridable' => false,
+                            'fields' => [
+                                'subcontents' => [
+                                    'type' => 'collection.list',
+                                    'array' => true,
+                                    'label' => 'Content Items',
+                                    'description' => 'Create each item to appear in the content row.',
+                                    'value' => 'name',
+                                    'ajax' => true,
+                                    'fields' => [
+                                        '.name' => [
+                                            'type' => 'input.text',
+                                            'label' => 'Title',
+                                            'description' => 'Enter title.'
+                                        ],
+                                        '.accent' => [
+                                            'type' => 'select.select',
+                                            'label' => 'Accent',
+                                            'description' => 'Select preferred block accent color.',
+                                            'placeholder' => 'Select...',
+                                            'default' => 'none',
+                                            'options' => [
+                                                'none' => 'None',
+                                                'accent1' => 'Accent Color 1',
+                                                'accent2' => 'Accent Color 2',
+                                                'accent3' => 'Accent Color 3'
+                                            ]
+                                        ],
+                                        '.icon' => [
+                                            'type' => 'input.icon',
+                                            'label' => 'Icon',
+                                            'description' => 'Select the icon.'
+                                        ],
+                                        '.img' => [
+                                            'type' => 'input.imagepicker',
+                                            'label' => 'Image',
+                                            'description' => 'Select the image.'
+                                        ],
+                                        '.rokboximage' => [
+                                            'type' => 'input.imagepicker',
+                                            'label' => 'Lightcase Image',
+                                            'description' => 'Select the Lightcase image.'
+                                        ],
+                                        '.rokboxcaption' => [
+                                            'type' => 'input.text',
+                                            'label' => 'Caption',
+                                            'description' => 'Customize the Lightcase caption.',
+                                            'placeholder' => 'Enter caption'
+                                        ],
+                                        '.subtitle' => [
+                                            'type' => 'input.text',
+                                            'label' => 'Subtitle',
+                                            'description' => 'Enter subtitle.'
+                                        ],
+                                        '.description' => [
+                                            'type' => 'textarea.textarea',
+                                            'label' => 'Description',
+                                            'description' => 'Enter the descriptiopn.'
+                                        ],
+                                        '.class' => [
+                                            'type' => 'input.selectize',
+                                            'label' => 'CSS Classes',
+                                            'description' => 'CSS class name for the particle.'
+                                        ],
+                                        '.button' => [
+                                            'type' => 'input.text',
+                                            'label' => 'Button Label',
+                                            'description' => 'Specify the button label.'
+                                        ],
+                                        '.buttonlink' => [
+                                            'type' => 'input.text',
+                                            'label' => 'Button Link',
+                                            'description' => 'Specify the button link.'
+                                        ],
+                                        '.buttonclass' => [
+                                            'type' => 'input.selectize',
+                                            'label' => 'Button Classes',
+                                            'description' => 'CSS class names for the button.'
+                                        ],
+                                        '.buttontarget' => [
+                                            'type' => 'select.selectize',
+                                            'label' => 'Target',
+                                            'description' => 'Target browser window when item is clicked.',
+                                            'placeholder' => 'Select...',
+                                            'default' => '_self',
+                                            'options' => [
+                                                '_self' => 'Self',
+                                                '_blank' => 'New Window'
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ],
+                        '_tab_articles' => [
+                            'label' => 'Pages',
+                            'overridable' => false,
+                            'fields' => [
+                                'article.filter.categories' => [
+                                    'type' => 'input.selectize',
+                                    'label' => 'Categories',
+                                    'description' => 'Select the categories the content should be taken from.',
+                                    'overridable' => false
+                                ],
+                                'article.limit.total' => [
+                                    'type' => 'input.text',
+                                    'label' => 'Number of Pages',
+                                    'description' => 'Enter the maximum number of content to display.',
+                                    'default' => 5,
+                                    'pattern' => '\\d{1,2}',
+                                    'overridable' => false
+                                ],
+                                'article.limit.start' => [
+                                    'type' => 'input.text',
+                                    'label' => 'Start From',
+                                    'description' => 'Enter offset specifying the first article to return. The default is \'0\' (the first content item).',
+                                    'default' => 0,
+                                    'pattern' => '\\d{1,2}',
+                                    'overridable' => false
+                                ],
+                                'article.sort.orderby' => [
+                                    'type' => 'select.select',
+                                    'label' => 'Order By',
+                                    'description' => 'Select how the content should be ordered by.',
+                                    'default' => 'default',
+                                    'options' => [
+                                        'default' => 'Default Ordering',
+                                        'date' => 'Date',
+                                        'publish_date' => 'Publish Date',
+                                        'unpublish_date' => 'Unpublish Date',
+                                        'modified' => 'Last Modified Date',
+                                        'title' => 'Title',
+                                        'slug' => 'Slug'
+                                    ],
+                                    'overridable' => false
+                                ],
+                                'article.sort.ordering' => [
+                                    'type' => 'select.select',
+                                    'label' => 'Ordering Direction',
+                                    'description' => 'Select the direction the content should be ordered by.',
+                                    'default' => 'asc',
+                                    'options' => [
+                                        'asc' => 'Ascending',
+                                        'desc' => 'Descending'
+                                    ],
+                                    'overridable' => false
+                                ]
+                            ]
+                        ],
+                        '_tab_display' => [
+                            'label' => 'Pages Display',
+                            'overridable' => false,
+                            'fields' => [
+                                'article.display.image.enabled' => [
+                                    'type' => 'select.select',
+                                    'label' => 'Image',
+                                    'description' => 'Select if and what image of the content should be shown.',
+                                    'options' => [
+                                        'intro' => 'Intro',
+                                        'full' => 'Full',
+                                        '' => 'None'
+                                    ]
+                                ],
+                                'article.display.title.enabled' => [
+                                    'type' => 'select.select',
+                                    'label' => 'Title',
+                                    'description' => 'Select if the content title should be shown.',
+                                    'options' => [
+                                        'show' => 'Show',
+                                        '' => 'Hide'
+                                    ]
+                                ],
+                                'article.display.title.limit' => [
+                                    'type' => 'input.text',
+                                    'label' => 'Title Limit',
+                                    'description' => 'Enter the maximum number of characters the content title should be limited to.',
+                                    'pattern' => '\\d+(\\.\\d+){0,1}'
+                                ],
+                                'article.display.text.type' => [
+                                    'type' => 'select.select',
+                                    'label' => 'Article Text',
+                                    'description' => 'Select if and how the content text should be shown.',
+                                    'options' => [
+                                        'intro' => 'Introduction',
+                                        'full' => 'Full Article',
+                                        '' => 'Hide'
+                                    ]
+                                ],
+                                'article.display.text.limit' => [
+                                    'type' => 'input.text',
+                                    'label' => 'Text Limit',
+                                    'description' => 'Type in the number of characters the content text should be limited to.',
+                                    'pattern' => '\\d+'
+                                ],
+                                'article.display.text.formatting' => [
+                                    'type' => 'select.select',
+                                    'label' => 'Text Formatting',
+                                    'description' => 'Select the formatting you want to use to display the content text.',
+                                    'options' => [
+                                        'text' => 'Plain Text',
+                                        'html' => 'HTML'
+                                    ]
+                                ],
+                                'article.display.link.enabled' => [
+                                    'type' => 'select.select',
+                                    'label' => 'Button Link',
+                                    'description' => 'Select if the button should link to the page.',
+                                    'options' => [
+                                        'show' => 'Show',
+                                        '' => 'Hide'
+                                    ]
+                                ],
+                                'article.display.link.label' => [
+                                    'type' => 'input.text',
+                                    'label' => 'Button Label',
+                                    'description' => 'Type in the label for the button.',
+                                    'placeholder' => 'Explore Now'
+                                ],
+                                'article.display.link.target' => [
+                                    'type' => 'select.selectize',
+                                    'label' => 'Button Target',
+                                    'description' => 'Target browser window when the button is clicked.',
+                                    'placeholder' => 'Select...',
+                                    'default' => '_self',
+                                    'options' => [
+                                        '_self' => 'Self',
+                                        '_blank' => 'New Window'
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+];

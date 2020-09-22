@@ -1,0 +1,88 @@
+{# Load Content From Grav #}
+{% set attr_extra = particle.extra|attribute_array %}
+{% set article_settings = particle.article %}
+{% set filter = article_settings.filter %}
+{% set sort = article_settings.sort %}
+{% set limit = article_settings.limit %}
+{% set start = limit.start %}
+{% set display = article_settings.display %}
+{% set categories = filter.categories|split(' ') %}
+{% set collection = grav.page.collection(
+    {
+        items: {'@taxonomy.category': categories},
+        order: {by: sort.orderby, dir: sort.ordering},
+        url_taxonomy_filters: false
+    },
+    false) %}
+{% set total = collection.count() %}
+{% set pages = collection.slice(start, limit.total) %}
+
+<div class="g-latestnews-grid {{ particle.cols }}">
+    <div class="g-latestnews-grid-sizer"></div>
+    {% for page in pages %}
+        {% if display.image.enabled %}
+            {% if display.image.enabled == 'intro' %}
+                {% set file = page.header.image.summary.enabled|defined(false) ? (page.header.image.summary.file ?: true) %}
+            {% elseif display.image.enabled == 'full' %}
+                {% set file = page.header.image.text.enabled|defined(false) ? (page.header.image.text.file ?: true) %}
+            {% endif %}
+
+            {% set image = file is same as(true) ? page.media.images|first : (file ? page.media.images[file]) %}
+        {% endif %}
+
+        <div class="g-latestnews-grid-item g-latestnews-platform-content {% if 'photo' in page.taxonomy.tag %}photo{% endif %}" data-groups='[{% for c in categories %}"{{ c }}"{{ not loop.last ? "," }}{% endfor %}]'>
+            <div class="g-latestnews-grid-item-wrapper g-latestnews-layout-photo">
+
+                {% if display.image.enabled %}
+                    <div class="g-latestnews-grid-item-image">
+                        <div class="g-latestnews-grid-item-overlay"></div>
+
+                        {% if display.date.enabled %}
+                            <span class="g-latestnews-grid-item-description date">
+                                {% if display.date.enabled == 'published' %}
+                                    {{ page.publishDate()|date(display.date.format) }}
+                                {% elseif display.date.enabled == 'modified' %}
+                                    {{ page.modified|date(display.date.format) }}
+                                {% else %}
+                                    {{ page.date|date(display.date.format) }}
+                                {% endif %}
+                            </span>
+                        {% endif %}
+
+                        <img src="{{ image.url }}" alt="{{ page.title|e }}"/>
+                    </div>
+                {% endif %}
+
+                <div class="g-latestnews-grid-item-content">
+
+                    {% if display.category.enabled %}
+                        <div class="g-latestnews-grid-item-case">
+                            {{ categories|join(' ') }}
+                        </div>
+                    {% endif %}
+
+                    {% if display.title.enabled and page.title %}
+                        {% if display.read_more.enabled %}<a href="{{ page.url|e }}" target="{{ display.read_more.target|default('_self')|e }}" class="g-latestnews-link">{% endif %}
+                        <div class="g-latestnews-grid-item-title"><span>{{ (display.title.limit ? page.title|e|truncate_text(display.title.limit) : page.title|e)|raw }}</span></div>
+                        {% if display.read_more.enabled %}</a>{% endif %}
+                    {% endif %}
+
+                    {% if display.text.type and 'photo' not in page.taxonomy.tag %}
+                        {% if not display.text.type == '' %}
+                            {% set page_text = display.text.type == 'intro' ? page.summary : page.content %}
+                            <div class="g-latestnews-grid-item-description">
+                                {% if display.text.formatting == 'text' %}
+                                    {{ page_text|truncate_text(display.text.limit)|raw }}
+                                {% else %}
+                                    {{ page_text|truncate_html(display.text.limit)|raw }}
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    {% endif %}
+
+                </div>
+
+            </div>
+        </div>
+    {% endfor %}
+</div>

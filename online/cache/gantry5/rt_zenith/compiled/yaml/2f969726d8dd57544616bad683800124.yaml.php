@@ -1,0 +1,204 @@
+<?php
+return [
+    '@class' => 'Gantry\\Component\\File\\CompiledYamlFile',
+    'filename' => '/domains1/gh43616200/public/www_root/user/themes/rt_zenith/particles/photocollage.yaml',
+    'modified' => 1600161768,
+    'data' => [
+        'name' => 'Photo Collage',
+        'description' => 'Display media quotes.',
+        'type' => 'particle',
+        'icon' => 'fa-camera',
+        'form' => [
+            'overrideable' => false,
+            'fields' => [
+                'enabled' => [
+                    'type' => 'input.checkbox',
+                    'label' => 'Enabled',
+                    'description' => 'Globally enable particles.',
+                    'default' => true
+                ],
+                '_tabs' => [
+                    'type' => 'container.tabs',
+                    'fields' => [
+                        '_tab_settings' => [
+                            'label' => 'Settings',
+                            'overridable' => false,
+                            'fields' => [
+                                'class' => [
+                                    'overridable' => false,
+                                    'type' => 'input.selectize',
+                                    'label' => 'CSS Classes',
+                                    'description' => 'CSS class name for the particle.'
+                                ],
+                                'source' => [
+                                    'overridable' => false,
+                                    'type' => 'select.select',
+                                    'label' => 'Content Source',
+                                    'description' => 'Choose if the content should be loaded from the platform or particle itself.',
+                                    'default' => 'particle',
+                                    'options' => [
+                                        'particle' => 'Particle',
+                                        'grav' => 'Grav'
+                                    ]
+                                ],
+                                'title' => [
+                                    'overridable' => false,
+                                    'type' => 'input.text',
+                                    'label' => 'Title',
+                                    'description' => 'Customize the title text.',
+                                    'placeholder' => 'Enter title'
+                                ],
+                                'spacing' => [
+                                    'overridable' => false,
+                                    'type' => 'input.text',
+                                    'label' => 'Item Spacing',
+                                    'description' => 'Set custom spacing between items.',
+                                    'placeholder' => '0.8%',
+                                    'pattern' => '\\d+(\\.\\d+){0,1}(rem|em|ex|ch|vw|vh|vmin|vmax|%|px|cm|mm|in|pt|pc)'
+                                ]
+                            ]
+                        ],
+                        '_tab_collection' => [
+                            'label' => 'Particle Items',
+                            'fields' => [
+                                'cases' => [
+                                    'type' => 'collection.list',
+                                    'array' => true,
+                                    'label' => 'Items',
+                                    'description' => 'Create items.',
+                                    'value' => 'title',
+                                    'ajax' => true,
+                                    'overridable' => false,
+                                    'fields' => [
+                                        '.width' => [
+                                            'type' => 'select.select',
+                                            'label' => 'Width Ratio',
+                                            'description' => 'Choose the width ratio of the image (applies only to large desktop range).',
+                                            'placeholder' => 'Select...',
+                                            'default' => '',
+                                            'options' => [
+                                                '' => 1,
+                                                'width-2' => 2,
+                                                'width-3' => 3
+                                            ]
+                                        ],
+                                        '.height' => [
+                                            'type' => 'select.select',
+                                            'label' => 'Height Ratio',
+                                            'description' => 'Choose the height ratio of the image (applies to all ranges except mobile).',
+                                            'placeholder' => 'Select...',
+                                            'default' => '',
+                                            'options' => [
+                                                '' => 1,
+                                                'height-2' => 2,
+                                                'height-3' => 3,
+                                                'height-4' => 4
+                                            ]
+                                        ],
+                                        '.image' => [
+                                            'type' => 'input.imagepicker',
+                                            'label' => 'Photo',
+                                            'description' => 'Pick desired photo.'
+                                        ],
+                                        '.icon' => [
+                                            'type' => 'input.icon',
+                                            'label' => 'Icon',
+                                            'description' => 'Select desired icon.',
+                                            'default' => 'fa fa-search-plus'
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ],
+                        '_tab_articles' => [
+                            'label' => 'Pages',
+                            'overridable' => false,
+                            'fields' => [
+                                'article.filter.categories' => [
+                                    'type' => 'input.selectize',
+                                    'label' => 'Categories',
+                                    'description' => 'Select the categories the content should be taken from.',
+                                    'overridable' => false
+                                ],
+                                'article.limit.total' => [
+                                    'type' => 'input.text',
+                                    'label' => 'Number of Pages',
+                                    'description' => 'Enter the maximum number of content to display.',
+                                    'default' => 5,
+                                    'pattern' => '\\d{1,2}',
+                                    'overridable' => false
+                                ],
+                                'article.limit.start' => [
+                                    'type' => 'input.text',
+                                    'label' => 'Start From',
+                                    'description' => 'Enter offset specifying the first article to return. The default is \'0\' (the first content item).',
+                                    'default' => 0,
+                                    'pattern' => '\\d{1,2}',
+                                    'overridable' => false
+                                ],
+                                'article.sort.orderby' => [
+                                    'type' => 'select.select',
+                                    'label' => 'Order By',
+                                    'description' => 'Select how the content should be ordered by.',
+                                    'default' => 'default',
+                                    'options' => [
+                                        'default' => 'Default Ordering',
+                                        'date' => 'Date',
+                                        'publish_date' => 'Publish Date',
+                                        'unpublish_date' => 'Unpublish Date',
+                                        'modified' => 'Last Modified Date',
+                                        'title' => 'Title',
+                                        'slug' => 'Slug'
+                                    ],
+                                    'overridable' => false
+                                ],
+                                'article.sort.ordering' => [
+                                    'type' => 'select.select',
+                                    'label' => 'Ordering Direction',
+                                    'description' => 'Select the direction the content should be ordered by.',
+                                    'default' => 'asc',
+                                    'options' => [
+                                        'asc' => 'Ascending',
+                                        'desc' => 'Descending'
+                                    ],
+                                    'overridable' => false
+                                ]
+                            ]
+                        ],
+                        '_tab_display' => [
+                            'label' => 'Pages Display',
+                            'overridable' => false,
+                            'fields' => [
+                                'article.display.image.enabled' => [
+                                    'type' => 'select.select',
+                                    'label' => 'Image',
+                                    'description' => 'Select if and what image of the content should be shown.',
+                                    'options' => [
+                                        'intro' => 'Intro',
+                                        'full' => 'Full',
+                                        '' => 'None'
+                                    ]
+                                ],
+                                'article.display.title.enabled' => [
+                                    'type' => 'select.select',
+                                    'label' => 'Title',
+                                    'description' => 'Select if the content title should be shown.',
+                                    'options' => [
+                                        'show' => 'Show',
+                                        '' => 'Hide'
+                                    ]
+                                ],
+                                'article.display.title.limit' => [
+                                    'type' => 'input.text',
+                                    'label' => 'Title Limit',
+                                    'description' => 'Enter the maximum number of characters the content title should be limited to.',
+                                    'pattern' => '\\d+(\\.\\d+){0,1}'
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+];

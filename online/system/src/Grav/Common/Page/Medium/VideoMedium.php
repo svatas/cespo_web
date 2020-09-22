@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @package    Grav\Common\Page
+ *
+ * @copyright  Copyright (C) 2015 - 2020 Trilby Media, LLC. All rights reserved.
+ * @license    MIT License; see LICENSE file for details.
+ */
+
+namespace Grav\Common\Page\Medium;
+
+use Grav\Common\Media\Interfaces\VideoMediaInterface;
+use Grav\Common\Media\Traits\VideoMediaTrait;
+
+class VideoMedium extends Medium implements VideoMediaInterface
+{
+    use VideoMediaTrait;
+
+    /**
+     * Reset medium.
+     *
+     * @return $this
+     */
+    public function reset()
+    {
+        parent::reset();
+
+        $this->resetPlayer();
+
+        return $this;
+    }
+}

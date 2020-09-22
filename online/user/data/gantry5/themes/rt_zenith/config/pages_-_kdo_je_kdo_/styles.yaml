@@ -1,0 +1,6 @@
+preset: preset4
+font:
+  family-default: family=Alegreya+Sans
+slideshow:
+  background-image: 'gantry-media://backgrounds/slideshow/kontakty_hlavicka_pruhl.png'
+  text-color: '#fffffe'

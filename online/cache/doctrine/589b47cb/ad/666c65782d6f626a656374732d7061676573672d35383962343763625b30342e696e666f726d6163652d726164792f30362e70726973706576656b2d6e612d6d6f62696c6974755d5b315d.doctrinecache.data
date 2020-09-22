@@ -1,0 +1,15 @@
+1600758555
+C:39:"Grav\Common\Flex\Types\Pages\PageObject":2392:{a:4:{s:4:"type";s:5:"pages";s:3:"key";s:36:"informace-rady/prispevek-na-mobilitu";s:8:"elements";a:3:{s:4:"root";b:0;s:6:"header";a:9:{s:5:"title";s:24:"Příspěvek na mobilitu";s:9:"published";b:1;s:4:"date";s:16:"04-01-2017 15:29";s:12:"publish_date";s:16:"01-03-2017 00:00";s:8:"taxonomy";a:1:{s:8:"category";a:1:{i:0;s:4:"Blog";}}s:7:"process";a:2:{s:8:"markdown";b:1;s:4:"twig";b:0;}s:7:"visible";b:0;s:6:"author";a:2:{s:8:"username";s:5:"admin";s:5:"alias";s:11:"RocketTheme";}s:13:"continue_link";b:1;}s:8:"markdown";s:1525:"Příspěvek na mobilitu je opakující se nároková dávka, která je určena osobě starší 1 roku. V dalším textu najdete podmínky pro vyplácení tohoto příspěvku.
+
+===
+
+Příspěvek na mobilitu je opakující se nároková dávka, která je určena osobě starší 1 roku:
+* která má nárok na průkaz osoby se zdravotním postižením ZTP nebo ZTP/P podle pravidel od 1. 1. 2014,
+* která se opakovaně v kalendářním měsíci za úhradu dopravuje nebo je dopravována,
+* které nejsou poskytovány pobytové sociální služby podle zákona o sociálních službách v domově pro osoby se zdravotním postižením, v domově pro seniory, v domově se zvláštním režimem nebo ve zdravotnickém zařízení ústavní péče,
+* z důvodů hodných zvláštního zřetele může být příspěvek na mobilitu přiznán i osobě, které jsou poskytovány pobytové sociální služby uvedené v předchozí odrážce,
+* nárok na výplatu nenáleží za kalendářní měsíc, jestliže je oprávněné osobě po celý tento kalendářní měsíc poskytována zdravotní péče v průběhu hospitalizace.
+
+Výše dávky: 550 Kč měsíčně. Vyplácí se tzv. zpětně, to znamená do konce kalendářního měsíce následujícího po kalendářním měsíci, za který náleží. Na žádost příjemce může být příspěvek na mobilitu vyplácen jednou splátkou vždy za 3 kalendářní měsíce, za které náležel.
+
+Zdroj: [Úřad práce ČR](https://www.uradprace.cz/web/cz/prispevek-na-mobilitu)";}s:7:"storage";a:6:{s:3:"key";s:36:"informace-rady/prispevek-na-mobilitu";s:11:"storage_key";s:42:"04.informace-rady/06.prispevek-na-mobilitu";s:8:"template";s:9:"blog_item";s:17:"storage_timestamp";i:1600161754;s:8:"markdown";a:1:{s:0:"";a:1:{s:9:"blog_item";i:1600161754;}}s:8:"checksum";s:32:"d8ab1864efdbe9515a42372d55f6362e";}}}

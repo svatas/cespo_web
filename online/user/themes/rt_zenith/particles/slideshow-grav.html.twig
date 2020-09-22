@@ -1,0 +1,48 @@
+{# Load Content From Grav #}
+{% set attr_extra = particle.extra|attribute_array %}
+{% set article_settings = particle.article %}
+{% set filter = article_settings.filter %}
+{% set sort = article_settings.sort %}
+{% set limit = article_settings.limit %}
+{% set start = limit.start %}
+{% set display = article_settings.display %}
+{% set categories = filter.categories|split(' ') %}
+{% set collection = grav.page.collection(
+    {
+        items: {'@taxonomy.category': categories},
+        order: {by: sort.orderby, dir: sort.ordering},
+        url_taxonomy_filters: false
+    },
+    false) %}
+{% set total = collection.count() %}
+{% set pages = collection.slice(start, limit.total) %}
+
+{% for page in pages %}
+    {% if display.image.enabled %}
+        {% if display.image.enabled == 'intro' %}
+            {% set file = page.header.image.summary.enabled|defined(false) ? (page.header.image.summary.file ?: true) %}
+        {% elseif display.image.enabled == 'full' %}
+            {% set file = page.header.image.text.enabled|defined(false) ? (page.header.image.text.file ?: true) %}
+        {% endif %}
+
+        {% set image = file is same as(true) ? page.media.images|first : (file ? page.media.images[file]) %}
+    {% endif %}
+
+    <div class="swiper-slide " style="background-image: url({{ image.url }}); background-position: center center;">
+        <div class="slide">
+            <h3 class="g-slideshow-top-title ">
+                {{ categories|join(' ') }}
+            </h3>
+
+            {% if display.title.enabled and page.title %}
+                <h1 class="g-slideshow-main-title">
+                    {{ (display.title.limit ? page.title|e|truncate_text(display.title.limit) : page.title|e)|raw }}
+                </h1>
+            {% endif %}
+
+            {% if display.link.enabled %}
+                <a href="{{ page.url|e }}" target="{{ display.link.target|default('_self') }}" class="button">{{ display.link.label|default('Explore Now') }}</a>
+            {% endif %}
+        </div>
+    </div>
+{% endfor %}

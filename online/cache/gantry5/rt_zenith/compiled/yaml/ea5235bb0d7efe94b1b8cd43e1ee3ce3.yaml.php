@@ -1,0 +1,279 @@
+<?php
+return [
+    '@class' => 'Gantry\\Component\\File\\CompiledYamlFile',
+    'filename' => '/domains1/gh43616200/public/www_root/user/themes/rt_zenith/particles/bookblock.yaml',
+    'modified' => 1600161768,
+    'data' => [
+        'name' => 'BookBlock',
+        'description' => 'Display items in BookBlock layout.',
+        'type' => 'particle',
+        'icon' => 'fa-book',
+        'form' => [
+            'overrideable' => false,
+            'fields' => [
+                'enabled' => [
+                    'type' => 'input.checkbox',
+                    'label' => 'Enabled',
+                    'description' => 'Globally enable particles.',
+                    'default' => true
+                ],
+                '_tabs' => [
+                    'type' => 'container.tabs',
+                    'fields' => [
+                        '_tab_settings' => [
+                            'label' => 'Settings',
+                            'overridable' => false,
+                            'fields' => [
+                                'class' => [
+                                    'type' => 'input.selectize',
+                                    'label' => 'CSS Classes',
+                                    'description' => 'CSS class name for the particle.'
+                                ],
+                                'source' => [
+                                    'type' => 'select.select',
+                                    'label' => 'Content Source',
+                                    'description' => 'Choose if the content should be loaded from the Joomla articles or particle itself.',
+                                    'default' => 'particle',
+                                    'options' => [
+                                        'particle' => 'Particle',
+                                        'grav' => 'Grav'
+                                    ]
+                                ],
+                                'height' => [
+                                    'type' => 'input.number',
+                                    'label' => 'Section Height (px)',
+                                    'description' => 'Customize section height.',
+                                    'placeholder' => 'Enter number value.'
+                                ],
+                                'loop' => [
+                                    'type' => 'select.select',
+                                    'label' => 'Loop',
+                                    'description' => 'Decide if you want your BookBlock to loop or not.',
+                                    'default' => 'enabled',
+                                    'options' => [
+                                        'enabled' => 'Enable',
+                                        'disabled' => 'Disable'
+                                    ]
+                                ]
+                            ]
+                        ],
+                        '_tab_collection' => [
+                            'label' => 'Particle Items',
+                            'overridable' => false,
+                            'fields' => [
+                                'items' => [
+                                    'type' => 'collection.list',
+                                    'array' => true,
+                                    'label' => 'Blocks',
+                                    'description' => 'Create each item to appear in the content row.',
+                                    'value' => 'title',
+                                    'ajax' => true,
+                                    'fields' => [
+                                        '.category' => [
+                                            'type' => 'input.text',
+                                            'label' => 'Category',
+                                            'description' => 'Customize the Category.',
+                                            'placeholder' => 'Enter the item Category'
+                                        ],
+                                        '.subject' => [
+                                            'type' => 'input.text',
+                                            'label' => 'Subject',
+                                            'description' => 'Customize the Subject.',
+                                            'placeholder' => 'Enter the item Subject.'
+                                        ],
+                                        '.title' => [
+                                            'type' => 'input.text',
+                                            'label' => 'Title',
+                                            'description' => 'Customize the Title.',
+                                            'placeholder' => 'Enter the item Title'
+                                        ],
+                                        '.intro' => [
+                                            'type' => 'textarea.textarea',
+                                            'label' => 'Intro',
+                                            'description' => 'Customize the intro.',
+                                            'placeholder' => 'Enter short intro'
+                                        ],
+                                        '.content' => [
+                                            'type' => 'textarea.textarea',
+                                            'label' => 'Content',
+                                            'description' => 'Customize the content.',
+                                            'placeholder' => 'Enter content here'
+                                        ],
+                                        '.readmore' => [
+                                            'type' => 'input.text',
+                                            'label' => 'Read More Label',
+                                            'description' => 'Specify the Read More label.'
+                                        ],
+                                        '.readmorelink' => [
+                                            'type' => 'input.text',
+                                            'label' => 'Read More Link',
+                                            'description' => 'Specify the Read More link.'
+                                        ],
+                                        '.readmoretarget' => [
+                                            'type' => 'select.select',
+                                            'label' => 'Read More Target',
+                                            'description' => 'Target browser window when item is clicked.',
+                                            'placeholder' => 'Select...',
+                                            'default' => '_self',
+                                            'options' => [
+                                                '_self' => 'Self',
+                                                '_blank' => 'New Window'
+                                            ]
+                                        ],
+                                        '.readmoreclass' => [
+                                            'type' => 'input.selectize',
+                                            'label' => 'Read More Classes',
+                                            'description' => 'CSS class names for the Read More button.'
+                                        ],
+                                        '.image' => [
+                                            'type' => 'input.imagepicker',
+                                            'label' => 'Image',
+                                            'description' => 'Select desired image.'
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ],
+                        '_tab_articles' => [
+                            'label' => 'Pages',
+                            'overridable' => false,
+                            'fields' => [
+                                'article.filter.categories' => [
+                                    'type' => 'input.selectize',
+                                    'label' => 'Categories',
+                                    'description' => 'Select the categories the content should be taken from.',
+                                    'overridable' => false
+                                ],
+                                'article.limit.total' => [
+                                    'type' => 'input.text',
+                                    'label' => 'Number of Pages',
+                                    'description' => 'Enter the maximum number of content to display.',
+                                    'default' => 5,
+                                    'pattern' => '\\d{1,2}',
+                                    'overridable' => false
+                                ],
+                                'article.limit.start' => [
+                                    'type' => 'input.text',
+                                    'label' => 'Start From',
+                                    'description' => 'Enter offset specifying the first article to return. The default is \'0\' (the first content item).',
+                                    'default' => 0,
+                                    'pattern' => '\\d{1,2}',
+                                    'overridable' => false
+                                ],
+                                'article.sort.orderby' => [
+                                    'type' => 'select.select',
+                                    'label' => 'Order By',
+                                    'description' => 'Select how the content should be ordered by.',
+                                    'default' => 'default',
+                                    'options' => [
+                                        'default' => 'Default Ordering',
+                                        'date' => 'Date',
+                                        'publish_date' => 'Publish Date',
+                                        'unpublish_date' => 'Unpublish Date',
+                                        'modified' => 'Last Modified Date',
+                                        'title' => 'Title',
+                                        'slug' => 'Slug'
+                                    ],
+                                    'overridable' => false
+                                ],
+                                'article.sort.ordering' => [
+                                    'type' => 'select.select',
+                                    'label' => 'Ordering Direction',
+                                    'description' => 'Select the direction the content should be ordered by.',
+                                    'default' => 'asc',
+                                    'options' => [
+                                        'asc' => 'Ascending',
+                                        'desc' => 'Descending'
+                                    ],
+                                    'overridable' => false
+                                ]
+                            ]
+                        ],
+                        '_tab_display' => [
+                            'label' => 'Pages Display',
+                            'overridable' => false,
+                            'fields' => [
+                                'article.display.image.enabled' => [
+                                    'type' => 'select.select',
+                                    'label' => 'Image',
+                                    'description' => 'Select if and what image of the content should be shown.',
+                                    'options' => [
+                                        'intro' => 'Intro',
+                                        'full' => 'Full',
+                                        '' => 'None'
+                                    ]
+                                ],
+                                'article.display.categories.enabled' => [
+                                    'type' => 'select.select',
+                                    'label' => 'Categories',
+                                    'description' => 'Select if the categories should be shown.',
+                                    'options' => [
+                                        'show' => 'Show',
+                                        '' => 'Hide'
+                                    ]
+                                ],
+                                'article.display.title.enabled' => [
+                                    'type' => 'select.select',
+                                    'label' => 'Title',
+                                    'description' => 'Select if the content title should be shown.',
+                                    'options' => [
+                                        'show' => 'Show',
+                                        '' => 'Hide'
+                                    ]
+                                ],
+                                'article.display.title.limit' => [
+                                    'type' => 'input.text',
+                                    'label' => 'Title Limit',
+                                    'description' => 'Enter the maximum number of characters the content title should be limited to.',
+                                    'pattern' => '\\d+(\\.\\d+){0,1}'
+                                ],
+                                'article.display.text.type' => [
+                                    'type' => 'select.select',
+                                    'label' => 'Page Text',
+                                    'description' => 'Select if and how the content text should be shown.',
+                                    'options' => [
+                                        'intro' => 'Introduction',
+                                        'full' => 'Full Page',
+                                        '' => 'Hide'
+                                    ]
+                                ],
+                                'article.display.text.limit' => [
+                                    'type' => 'input.text',
+                                    'label' => 'Text Limit',
+                                    'description' => 'Type in the number of characters the content text should be limited to.',
+                                    'pattern' => '\\d+'
+                                ],
+                                'article.display.text.formatting' => [
+                                    'type' => 'select.select',
+                                    'label' => 'Text Formatting',
+                                    'description' => 'Select the formatting you want to use to display the content text.',
+                                    'options' => [
+                                        'text' => 'Plain Text',
+                                        'html' => 'HTML'
+                                    ]
+                                ],
+                                'article.display.link.label' => [
+                                    'type' => 'input.text',
+                                    'label' => 'Button Label',
+                                    'description' => 'Type in the label for the button.',
+                                    'placeholder' => 'Learn More'
+                                ],
+                                'article.display.link.target' => [
+                                    'type' => 'select.selectize',
+                                    'label' => 'Title Target',
+                                    'description' => 'Target browser window when the title is clicked.',
+                                    'placeholder' => 'Select...',
+                                    'default' => '_self',
+                                    'options' => [
+                                        '_self' => 'Self',
+                                        '_blank' => 'New Window'
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+];

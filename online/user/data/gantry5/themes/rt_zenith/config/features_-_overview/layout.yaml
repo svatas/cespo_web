@@ -1,0 +1,583 @@
+version: 2
+preset:
+  image: 'gantry-admin://images/layouts/default.png'
+  name: default
+  timestamp: 1554457514
+layout:
+  /container-body/:
+    -
+      -
+        'bodysidebar 20': {  }
+      -
+        '/top/ 80':
+          -
+            - system-messages-9828
+        /navigation/: {  }
+        /slideshow/:
+          -
+            - simplecontent-4976
+        /header/: {  }
+        /above/: {  }
+        /feature/: {  }
+        /showcase/: {  }
+        /utility/: {  }
+        /container-main/:
+          -
+            -
+              'sidebar 20': {  }
+            -
+              'mainbar 60':
+                -
+                  - pricingtable-3404
+            -
+              'aside 20': {  }
+        /expanded/: {  }
+        /extension/:
+          -
+            - infolist-5605
+        /bottom/:
+          -
+            - infolist-5165
+        footer: {  }
+        copyright: {  }
+  offcanvas: {  }
+structure:
+  bodysidebar:
+    type: section
+    title: 'Body Sidebar'
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+        - children
+  top:
+    type: section
+    attributes:
+      boxed: ''
+      class: ''
+      variations: section-horizontal-paddings
+  navigation:
+    type: section
+    attributes:
+      boxed: '3'
+      class: ''
+      variations: section-horizontal-paddings
+  slideshow:
+    type: section
+    attributes:
+      boxed: ''
+      class: ''
+      variations: section-horizontal-paddings
+  header:
+    attributes:
+      boxed: ''
+      class: ''
+      variations: 'section-vertical-paddings section-horizontal-paddings'
+  above:
+    type: section
+    attributes:
+      boxed: ''
+      class: ''
+      variations: section-horizontal-paddings
+  feature:
+    type: section
+    attributes:
+      boxed: ''
+      class: ''
+      variations: 'section-vertical-paddings section-horizontal-paddings'
+  showcase:
+    type: section
+    attributes:
+      boxed: ''
+      class: ''
+      variations: 'section-vertical-paddings section-horizontal-paddings'
+  utility:
+    type: section
+    attributes:
+      boxed: ''
+      class: ''
+      variations: 'section-vertical-paddings section-horizontal-paddings'
+  sidebar:
+    type: section
+    subtype: aside
+    inherit:
+      outline: default
+      include:
+        - block
+        - attributes
+        - children
+  mainbar:
+    type: section
+    subtype: main
+    title: Main
+    inherit:
+      outline: default
+      include:
+        - block
+        - attributes
+  aside:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+        - children
+  container-main:
+    attributes:
+      boxed: ''
+      class: ''
+      extra: {  }
+  expanded:
+    type: section
+    attributes:
+      boxed: ''
+      class: ''
+      variations: section-horizontal-paddings
+  extension:
+    type: section
+    attributes:
+      boxed: ''
+      class: ''
+      variations: 'section-vertical-paddings section-horizontal-paddings'
+  bottom:
+    type: section
+    attributes:
+      boxed: ''
+      class: ''
+      variations: 'section-vertical-paddings section-horizontal-paddings'
+  footer:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+        - children
+  copyright:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+        - block
+  container-body:
+    attributes:
+      boxed: ''
+  offcanvas:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+content:
+  simplecontent-4976:
+    title: 'Features - Overview'
+    attributes:
+      class: ''
+      title: ''
+      items:
+        -
+          layout: header
+          created_date: ''
+          content_title: Features
+          author: ''
+          leading_content: 'A standard assortment of features are available with Zenith. The Gantry 5 Framework provides the foundation for the template''s feature set, some of which are documented below:'
+          main_content: ''
+          readmore_label: ''
+          readmore_link: ''
+          readmore_class: ''
+          readmore_target: _self
+          title: Overview
+  pricingtable-3404:
+    title: 'Features - Features List'
+    attributes:
+      class: ''
+      title: ''
+      headertext: ''
+      footertext: ''
+      columns: g-pricingtable-3-col
+      tables:
+        -
+          accent: accent1
+          customcolor: ''
+          class: ''
+          ribbon: ''
+          icon: ''
+          price: Dropdown
+          period: ''
+          desc: ''
+          buttontext: Navigation
+          buttonlink: '#'
+          buttontarget: _self
+          buttonclass: ''
+          items:
+            -
+              text: 'A Dropdown Menu system, with inline icons, multiple columns and more.'
+              class: g-bold
+              title: 'Item 1'
+          plan: Menu
+        -
+          accent: accent2
+          customcolor: ''
+          class: ''
+          ribbon: ''
+          icon: ''
+          price: Unlimited
+          period: ''
+          desc: ''
+          buttontext: Layout
+          buttonlink: '#'
+          buttontarget: _self
+          buttonclass: ''
+          items:
+            -
+              text: 'Unlimited positions, with drag and drop add, delete, move and resize capabilities.'
+              class: g-bold
+              title: 'Item 1'
+          plan: Positions
+        -
+          accent: accent1
+          customcolor: ''
+          class: ''
+          ribbon: ''
+          icon: ''
+          price: Variations
+          period: ''
+          desc: ''
+          buttontext: Style
+          buttonlink: '#'
+          buttontarget: _self
+          buttonclass: ''
+          items:
+            -
+              text: 'Enhance positions and particles with stylistic and structural block variations.'
+              class: g-bold
+              title: 'Item 1'
+          plan: Blocks
+        -
+          accent: accent2
+          customcolor: ''
+          class: ''
+          ribbon: ''
+          icon: ''
+          price: Presets
+          period: ''
+          desc: ''
+          buttontext: Style
+          buttonlink: '#'
+          buttontarget: _self
+          buttonclass: ''
+          items:
+            -
+              text: 'Choose from six preset style variations, easily customizable from the admin.'
+              class: g-bold
+              title: 'Item 1'
+          plan: Multiple
+        -
+          accent: accent1
+          customcolor: ''
+          class: ''
+          ribbon: ''
+          icon: ''
+          price: Responsive
+          period: ''
+          desc: ''
+          buttontext: Layout
+          buttonlink: '#'
+          buttontarget: _self
+          buttonclass: ''
+          items:
+            -
+              text: 'Responsive layout that adapts to the viewing device, such as laptop or mobile.'
+              class: g-bold
+              title: 'Item 1'
+          plan: Layout
+        -
+          accent: accent2
+          customcolor: ''
+          class: ''
+          ribbon: ''
+          icon: ''
+          price: Typography
+          period: ''
+          desc: ''
+          buttontext: Style
+          buttonlink: '#'
+          buttontarget: _self
+          buttonclass: ''
+          items:
+            -
+              text: 'Enhance site content with rich typography and FontAwesome icons.'
+              class: g-bold
+              title: 'Item 1'
+          plan: Custom
+        -
+          accent: accent1
+          customcolor: ''
+          class: ''
+          ribbon: ''
+          icon: ''
+          price: Editor
+          period: ''
+          desc: ''
+          buttontext: Menu
+          buttonlink: '#'
+          buttontarget: _self
+          buttonclass: ''
+          items:
+            -
+              text: 'Advanced Menu Editor with drag and drop, multiple columns and more.'
+              class: g-bold
+              title: 'Item 1'
+          plan: Menu
+        -
+          accent: accent2
+          customcolor: ''
+          class: ''
+          ribbon: ''
+          icon: ''
+          price: Layout
+          period: ''
+          desc: ''
+          buttontext: Layout
+          buttonlink: '#'
+          buttontarget: _self
+          buttonclass: ''
+          items:
+            -
+              text: 'The Layout Manager is an intuitive interface for managing blocks.'
+              class: g-bold
+              title: 'Item 1'
+          plan: Manager
+        -
+          accent: accent1
+          customcolor: ''
+          class: ''
+          ribbon: ''
+          icon: ''
+          price: Settings
+          period: ''
+          desc: ''
+          buttontext: Style
+          buttonlink: '#'
+          buttontarget: _self
+          buttonclass: ''
+          items:
+            -
+              text: 'Unique, and intuitive interface for colors and fonts, with live previews.'
+              class: g-bold
+              title: 'New item'
+          plan: Settings
+  infolist-5605:
+    title: 'Features - Gantry 5 Core Features'
+    attributes:
+      class: ''
+      title: 'Gantry 5 Core Features'
+      intro: ''
+      cols: g-3cols
+      infolists:
+        -
+          icon: ''
+          iconloc: left
+          image: ''
+          imageloc: left
+          textstyle: compact
+          imagestyle: compact
+          desc: 'Particles are simple user interface blocks that hook seamlessly into Gantry 5'
+          tag: ''
+          subtag: ''
+          label: ''
+          link: '#'
+          buttonicon: ''
+          readmoreclass: ''
+          readmoretarget: _self
+          title: 'Powerful Particles System'
+        -
+          icon: ''
+          iconloc: left
+          image: ''
+          imageloc: left
+          textstyle: compact
+          imagestyle: compact
+          desc: 'Configure and structure your menu hierarchy with our new Menu editor'
+          tag: ''
+          subtag: ''
+          label: ''
+          link: '#'
+          buttonicon: ''
+          readmoreclass: ''
+          readmoretarget: _self
+          title: 'Visual Menu Editor'
+        -
+          icon: ''
+          iconloc: left
+          image: ''
+          imageloc: left
+          textstyle: compact
+          imagestyle: compact
+          desc: 'Easy-to-use drag-n-drop layout manager makes layouts a breeze to create'
+          tag: ''
+          subtag: ''
+          label: ''
+          link: '#'
+          buttonicon: ''
+          readmoreclass: ''
+          readmoretarget: _self
+          title: 'Layout Manager'
+        -
+          icon: ''
+          iconloc: left
+          image: ''
+          imageloc: left
+          textstyle: compact
+          imagestyle: compact
+          desc: 'Made a mistake in the layout manager? No problem, you can easily undo it'
+          tag: ''
+          subtag: ''
+          label: ''
+          link: '#'
+          buttonicon: ''
+          readmoreclass: ''
+          readmoretarget: _self
+          title: 'Unlimited Undo/Redo'
+        -
+          icon: ''
+          iconloc: left
+          image: ''
+          imageloc: left
+          textstyle: compact
+          imagestyle: compact
+          desc: 'Icon Picker, Image Picker, Font Picker, Collections, and much, much more!'
+          tag: ''
+          subtag: ''
+          label: ''
+          link: '#'
+          buttonicon: ''
+          readmoreclass: ''
+          readmoretarget: _self
+          title: 'Sophisticated Built-in Fields'
+        -
+          icon: ''
+          iconloc: left
+          image: ''
+          imageloc: left
+          textstyle: compact
+          imagestyle: compact
+          desc: 'Dynamic compilation of multiple CSS preprocessors is supported in Gantry 5'
+          tag: ''
+          subtag: ''
+          label: ''
+          link: '#'
+          buttonicon: ''
+          readmoreclass: ''
+          readmoretarget: _self
+          title: 'SCSS LESS Support'
+        -
+          icon: ''
+          iconloc: left
+          image: ''
+          imageloc: left
+          textstyle: compact
+          imagestyle: compact
+          desc: 'Easily add Gantry 5 particles to a location-configurable off-canvas panel'
+          tag: ''
+          subtag: ''
+          label: ''
+          link: '#'
+          buttonicon: ''
+          readmoreclass: ''
+          readmoretarget: _self
+          title: 'Off-Canvas Panel'
+        -
+          icon: ''
+          iconloc: left
+          image: ''
+          imageloc: left
+          textstyle: compact
+          imagestyle: compact
+          desc: 'Gantry 5 uses the super-powerful Twig templating system to build your themes'
+          tag: ''
+          subtag: ''
+          label: ''
+          link: '#'
+          buttonicon: ''
+          readmoreclass: ''
+          readmoretarget: _self
+          title: 'Twig-based Templating'
+        -
+          icon: ''
+          iconloc: left
+          image: ''
+          imageloc: left
+          textstyle: compact
+          imagestyle: compact
+          desc: 'Easily configure Gantry 5 with simple-to-use YAML syntax'
+          tag: ''
+          subtag: ''
+          label: ''
+          link: '#'
+          buttonicon: ''
+          readmoreclass: ''
+          readmoretarget: _self
+          title: 'YAML-based Configuration'
+    block:
+      variations: title-center
+  infolist-5165:
+    title: 'Features - System Requirements'
+    attributes:
+      class: ''
+      title: 'System Requirements'
+      intro: ''
+      cols: g-3cols
+      infolists:
+        -
+          icon: ''
+          iconloc: left
+          image: ''
+          imageloc: left
+          textstyle: compact
+          imagestyle: compact
+          desc: 'Google Chrome, Firefox, Opera, Safari, Edge'
+          tag: ''
+          subtag: ''
+          label: ''
+          link: '#'
+          buttonicon: ''
+          readmoreclass: ''
+          readmoretarget: _self
+          title: Browsers
+        -
+          icon: ''
+          iconloc: left
+          image: ''
+          imageloc: left
+          textstyle: compact
+          imagestyle: compact
+          desc: 'PHP 7.1+ with Curl, OpenSSL Libraries and Multibyte String Support'
+          tag: ''
+          subtag: ''
+          label: ''
+          link: '#'
+          buttonicon: ''
+          readmoreclass: ''
+          readmoretarget: _self
+          title: 'Server Requirements'
+        -
+          icon: ''
+          iconloc: left
+          image: ''
+          imageloc: left
+          textstyle: compact
+          imagestyle: compact
+          desc: 'Joomla 3.9+, WordPress 5.0+, Grav 1.5+'
+          tag: ''
+          subtag: ''
+          label: ''
+          link: '#'
+          buttonicon: ''
+          readmoreclass: ''
+          readmoretarget: _self
+          title: Platforms
+    block:
+      variations: title-center

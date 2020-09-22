@@ -1,0 +1,6 @@
+preset: preset4
+font:
+  family-default: family=Alegreya+Sans
+slideshow:
+  background-image: 'gantry-media://backgrounds/slideshow/Usti_nad_labem._hlavicka.3_pruhl.png'
+  text-color: '#fffffe'

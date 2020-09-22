@@ -1,0 +1,80 @@
+{# Load Content From Grav #}
+{% set attr_extra = particle.extra|attribute_array %}
+{% set article_settings = particle.article %}
+{% set filter = article_settings.filter %}
+{% set sort = article_settings.sort %}
+{% set limit = article_settings.limit %}
+{% set start = limit.start %}
+{% set display = article_settings.display %}
+{% set categories = filter.categories|split(' ') %}
+{% set collection = grav.page.collection(
+    {
+        items: {'@taxonomy.category': categories},
+        order: {by: sort.orderby, dir: sort.ordering},
+        url_taxonomy_filters: false
+    },
+    false) %}
+{% set total = collection.count() %}
+{% set pages = collection.slice(start, limit.total) %}
+
+{% for page in pages %}
+    {% if display.image.enabled %}
+        {% if display.image.enabled == 'intro' %}
+            {% set file = page.header.image.summary.enabled|defined(false) ? (page.header.image.summary.file ?: true) %}
+        {% elseif display.image.enabled == 'full' %}
+            {% set file = page.header.image.text.enabled|defined(false) ? (page.header.image.text.file ?: true) %}
+        {% endif %}
+
+        {% set image = file is same as(true) ? page.media.images|first : (file ? page.media.images[file]) %}
+    {% endif %}
+
+    <div class="bb-item">
+        <div class="bb-custom-firstpage" style="height: {{ particle.height|e }}px;">
+            {% if display.categories.enabled and categories %}
+                <span class="bb-item-category">
+                    {{ categories|join(', ') }}
+                </span>
+            {% endif %}
+
+            <nav>
+                <div class="bb-nav-prev bb-custom-icon">
+                    <i class="fa fa-chevron-circle-left"></i>
+                </div>
+                <div class="bb-nav-next bb-custom-icon ">
+                    <i class="fa fa-chevron-circle-right"></i>
+                </div>
+            </nav>
+
+            {% if display.title.enabled and page.title %}
+                <h3 class="bb-item-title">
+                    {{ (display.title.limit ? page.title|e|truncate_text(display.title.limit) : page.title|e)|raw }}
+                </h3>
+            {% endif %}
+
+            {% if not display.text.type == '' %}
+                {% set page_text = display.text.type == 'intro' ? page.summary : page.content %}
+                <p class="bb-item-intro">
+                    {% if display.text.formatting == 'text' %}
+                        {{ page_text|truncate_text(display.text.limit)|raw }}
+                    {% else %}
+                        {{ page_text|truncate_html(display.text.limit)|raw }}
+                    {% endif %}
+                </p>
+            {% endif %}
+
+            {% if display.link.enabled %}
+                <a href="{{ page.url|e }}" class="bb-link" target="{{ display.link.target|default('_self') }}">
+                    {{ display.link.label|default('Learn More') }}
+                </a>
+            {% endif %}
+        </div>
+
+        <div class="bb-custom-side" style="height: {{ particle.height|e }}px;">
+            <div class="bb-sideimage">
+                {% if display.image.enabled %}
+                    <img src="{{ image.url }}" alt="{{ page.title|e }}"/>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endfor %}

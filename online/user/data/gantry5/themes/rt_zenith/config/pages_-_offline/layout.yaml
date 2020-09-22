@@ -1,0 +1,192 @@
+version: 2
+preset:
+  image: 'gantry-admin://images/layouts/default.png'
+  name: default
+  timestamp: 1554457514
+layout:
+  /container-body/:
+    -
+      -
+        'bodysidebar 20': {  }
+      -
+        'top 80': {  }
+        /navigation/: {  }
+        /slideshow/:
+          -
+            - simplecontent-1290
+        /header/: {  }
+        /above/: {  }
+        /feature/: {  }
+        /showcase/: {  }
+        /utility/: {  }
+        /container-main/:
+          -
+            -
+              'sidebar 20': {  }
+            -
+              'mainbar 60': {  }
+            -
+              'aside 20': {  }
+        /expanded/: {  }
+        /extension/:
+          -
+            - custom-2951
+        /bottom/: {  }
+        footer: {  }
+        copyright: {  }
+  offcanvas: {  }
+structure:
+  bodysidebar:
+    type: section
+    title: 'Body Sidebar'
+    inherit:
+      outline: default
+      include:
+        - block
+        - attributes
+        - children
+  top:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+        - children
+  navigation:
+    type: section
+    attributes:
+      boxed: '3'
+      class: ''
+      variations: section-horizontal-paddings
+  slideshow:
+    type: section
+    attributes:
+      boxed: ''
+      class: ''
+      variations: section-horizontal-paddings
+  header:
+    attributes:
+      boxed: ''
+      class: ''
+      variations: 'section-vertical-paddings section-horizontal-paddings'
+  above:
+    type: section
+    attributes:
+      boxed: ''
+      class: ''
+      variations: section-horizontal-paddings
+  feature:
+    type: section
+    attributes:
+      boxed: ''
+      class: ''
+      variations: 'section-vertical-paddings section-horizontal-paddings'
+  showcase:
+    type: section
+    attributes:
+      boxed: ''
+      class: ''
+      variations: 'section-vertical-paddings section-horizontal-paddings'
+  utility:
+    type: section
+    attributes:
+      boxed: ''
+      class: ''
+      variations: 'section-vertical-paddings section-horizontal-paddings'
+  sidebar:
+    type: section
+    subtype: aside
+    inherit:
+      outline: default
+      include:
+        - block
+        - attributes
+        - children
+  mainbar:
+    type: section
+    subtype: main
+    title: Main
+    inherit:
+      outline: default
+      include:
+        - block
+        - attributes
+        - children
+  aside:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+        - children
+  container-main:
+    attributes:
+      boxed: ''
+      class: ''
+      extra: {  }
+  expanded:
+    type: section
+    attributes:
+      boxed: ''
+      class: ''
+      variations: section-horizontal-paddings
+  extension:
+    type: section
+    attributes:
+      boxed: ''
+      class: ''
+      variations: 'section-vertical-paddings section-horizontal-paddings'
+  bottom:
+    type: section
+    attributes:
+      boxed: ''
+      class: ''
+      variations: 'section-vertical-paddings section-horizontal-paddings'
+  footer:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+        - children
+  copyright:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - block
+        - children
+  container-body:
+    attributes:
+      boxed: ''
+  offcanvas:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+content:
+  simplecontent-1290:
+    title: 'Header - Offline'
+    attributes:
+      class: ''
+      title: ''
+      items:
+        -
+          layout: header
+          created_date: ''
+          content_title: 'Offline Page'
+          author: ''
+          leading_content: 'Sorry, our Website is Temporarily Down for Maintenance.'
+          main_content: ''
+          readmore_label: ''
+          readmore_link: ''
+          readmore_class: ''
+          readmore_target: _self
+          title: Offline
+  custom-2951:
+    title: 'Make your Grav site offline'
+    attributes:
+      html: "<p>To make your Grav website unavailable to visitors, replacing it with a simple message, do this:</p>\n\n<ol>\n  <li> Log in to the Grav Admin dashboard.</li>\n  <li> Click on the <strong>Gantry 5</strong> button in the admin sidebar on the left.</li>\n  <li> Click in the top right corner on the <strong>Extras</strong> button and select <strong>Platform Settings</strong>.</li>\n  <li> Find where it says <strong>Offline</strong> and select the <strong>Yes</strong> switch.</li>\n  <li>You can then change the <strong>Offline Message</strong> in the field below to give your visitors some explanation about why your website is unavailable.</li>\n  <li> Click the <strong>Save</strong> button on the top right to implement the new settings.</li>\n  <li>You should see a message confirming the settings have been changed.</li>\n</ol>"

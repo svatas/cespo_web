@@ -1,0 +1,19 @@
+title: 'CESPO - centrum služeb pro sluchově postižené'
+default_lang: cs
+author:
+  name: 'Petr Novák'
+  email: pnovak@cespo.eu
+taxonomies:
+  - category
+  - tag
+metadata:
+  description: 'CESPO, o.p.s. je samostatným a nezávislým občanským sdružením s plnou právní subjektivitou sdružujícím na základě dobrovolného  členství sluchově postižené osoby.'
+summary:
+  enabled: true
+  format: short
+  size: 300
+  delimiter: '==='
+redirects: null
+routes: null
+blog:
+  route: /blog

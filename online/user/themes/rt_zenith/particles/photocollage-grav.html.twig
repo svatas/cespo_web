@@ -1,0 +1,54 @@
+{# Load Content From Grav #}
+{% set attr_extra = particle.extra|attribute_array %}
+{% set article_settings = particle.article %}
+{% set filter = article_settings.filter %}
+{% set sort = article_settings.sort %}
+{% set limit = article_settings.limit %}
+{% set start = limit.start %}
+{% set display = article_settings.display %}
+{% set categories = filter.categories|split(' ') %}
+{% set collection = grav.page.collection(
+    {
+        items: {'@taxonomy.category': categories},
+        order: {by: sort.orderby, dir: sort.ordering},
+        url_taxonomy_filters: false
+    },
+    false) %}
+{% set total = collection.count() %}
+{% set pages = collection.slice(start, limit.total) %}
+{% do gantry.load('lightcase.init') %}
+
+{% if particle.title %}
+    <div class="g-photocollage-header">
+        <h3 class="g-photocollage-title">{{ particle.title }}</h3>
+    </div>
+{% endif %}
+
+<div class="g-photocollage-grid grid" data-masonry='{"itemSelector": ".g-photocollage-grid-item","columnWidth": ".grid-sizer"}'>
+    <div class="grid-sizer"></div>
+    {% for page in pages %}
+        {% if display.image.enabled %}
+            {% if display.image.enabled == 'intro' %}
+                {% set file = page.header.image.summary.enabled|defined(false) ? (page.header.image.summary.file ?: true) %}
+            {% elseif display.image.enabled == 'full' %}
+                {% set file = page.header.image.text.enabled|defined(false) ? (page.header.image.text.file ?: true) %}
+            {% endif %}
+
+            {% set image = file is same as(true) ? page.media.images|first : (file ? page.media.images[file]) %}
+        {% endif %}
+
+        {% set case_index = loop.index %}
+        <div class="g-photocollage-grid-item {{ page.taxonomy.tag|join(' ') }}" data-groups='["{{ case_index }}"]' style="padding: {{ particle.spacing|default('0.8%') }};">
+            {% if image %}
+                <div class="image-wrapper">
+                    <a href="{{ image.url }}" data-rel="lightcase:myCollection" title="{{ (display.title.limit ? page.title|e|truncate_text(display.title.limit) : page.title|e)|raw }}"></a>
+                    <img src="{{ image.url }}" alt="{{ (display.title.limit ? page.title|e|truncate_text(display.title.limit) : page.title|e)|raw }}"/>
+
+                    <div class="zoom">
+                        <i class="fa fa-search-plus" aria-hidden="true"></i>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>

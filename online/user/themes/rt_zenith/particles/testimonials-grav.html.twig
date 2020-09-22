@@ -1,0 +1,78 @@
+{# Load Content From Grav #}
+{% set attr_extra = particle.extra|attribute_array %}
+{% set article_settings = particle.article %}
+{% set filter = article_settings.filter %}
+{% set sort = article_settings.sort %}
+{% set limit = article_settings.limit %}
+{% set start = limit.start %}
+{% set display = article_settings.display %}
+{% set categories = filter.categories|split(' ') %}
+{% set collection = grav.page.collection(
+    {
+        items: {'@taxonomy.category': categories},
+        order: {by: sort.orderby, dir: sort.ordering},
+        url_taxonomy_filters: false
+    },
+    false) %}
+{% set total = collection.count() %}
+{% set pages = collection.slice(start, limit.total) %}
+
+<div class="swiper-wrapper testimony-wrapper">
+    {% for page in pages %}
+        {% if display.image.enabled %}
+            {% if display.image.enabled == 'intro' %}
+                {% set file = page.header.image.summary.enabled|defined(false) ? (page.header.image.summary.file ?: true) %}
+            {% elseif display.image.enabled == 'full' %}
+                {% set file = page.header.image.text.enabled|defined(false) ? (page.header.image.text.file ?: true) %}
+            {% endif %}
+
+            {% set image = file is same as(true) ? page.media.images|first : (file ? page.media.images[file]) %}
+        {% endif %}
+
+        <div class="swiper-slide">
+            {% if not display.text.type == '' %}
+                {% set page_text = display.text.type == 'intro' ? page.summary : page.content %}
+                <h2 class="g-testimonials-content">
+                    {% if display.text.formatting == 'text' %}
+                        {{ page_text|truncate_text(display.text.limit)|raw }}
+                    {% else %}
+                        {{ page_text|truncate_html(display.text.limit)|raw }}
+                    {% endif %}
+                </h2>
+            {% endif %}
+
+            {% if display.author.enabled %}
+                <p class="g-testimonials-author">
+                    {{ page.author }}
+                </p>
+            {% endif %}
+
+            <span class="g-testimonials-position">
+                {{ categories|join(' ') }}
+            </span>
+        </div>
+    {% endfor %}
+</div>
+<div class="g-testimonials-pagination">
+    <div class="swiper-wrapper">
+        {% for page in pages %}
+            {% if display.image.enabled %}
+                {% if display.image.enabled == 'intro' %}
+                    {% set file = page.header.image.summary.enabled|defined(false) ? (page.header.image.summary.file ?: true) %}
+                {% elseif display.image.enabled == 'full' %}
+                    {% set file = page.header.image.text.enabled|defined(false) ? (page.header.image.text.file ?: true) %}
+                {% endif %}
+
+                {% set image = file is same as(true) ? page.media.images|first : (file ? page.media.images[file]) %}
+            {% endif %}
+
+            <div class="swiper-slide g-testimonials-image-nav" style="background-image:url('{{ image.url }}')">
+                {% if display.author.enabled %}
+                    <span>
+                        {{ page.author }}
+                    </span>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
