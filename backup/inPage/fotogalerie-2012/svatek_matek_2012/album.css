@@ -1,0 +1,167 @@
+body {
+  background-color: #FED09E;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  border: 0px;
+  text-align: center;
+}
+.all {
+  text-align: left;
+  width: 680px;
+  border: 0px;
+  margin-top: 15px;
+  margin-left: 0px;
+  margin-right: auto;
+}
+
+.titleOut {
+  position: relative;
+  width: 680px;
+  height: 30px;
+  border: 1px solid #FEEECE;
+  background-color: #FEEECE;
+  padding: 0px;
+  margin-bottom: 10px;
+}
+.titleIn {
+  position: relative;
+  width: 678px;
+  height: 28px;
+  border: 1px solid #FED09E;
+  background-color: #FEEECE;
+  padding: 0px;
+  text-align: left;
+}
+
+
+.titleText {
+  font-size: 12px;
+  font-family: Verdana, "Helvetica CE", "Arial CE", Helvetica, Arial, sans-serif;
+  color: #7C1C1E;
+  font-weight: 400;
+  font-decoration: none;
+
+  background-color: #FEEECE;
+}
+
+.nahled {
+  font-size: 12px;
+  font-family: Verdana, "Helvetica CE", "Arial CE", Helvetica, Arial, sans-serif;
+  color: #7C1C1E;
+  font-weight: 400;
+  font-decoration: none;
+
+  position: relative;
+  float: left;
+  text-align: center;
+  margin-bottom: 15px;
+  width: 170px;
+  height: 174px;
+  border: 0px;
+  overflow: clip;
+}
+
+.titleText a {
+  text-decoration: none;
+  color: #7C1C1E;
+}
+.titleText a:visited {
+  text-decoration: none;
+  color: #7C1C1E;
+}
+.titleText a:active {
+  text-decoration: none;
+  color: #7C1C1E;
+}
+.titleText a:hover {
+  text-decoration: none;
+  color: #F58345;
+}
+
+.paticka {
+  font-size: 10px;
+  font-family: Verdana, "Helvetica CE", "Arial CE", Helvetica, Arial, sans-serif;
+  color: #7C1C1E;
+  font-weight: 400;
+  font-decoration: none;
+  text-align: center;
+
+  position: relative;
+  clear: both;
+  width; 600px;
+  margin-top: 15px;
+  border-top: 1px solid #7C1C1E;
+  padding-top: 10px;
+}
+
+
+
+
+.galleriesblock
+{
+  float: left; 
+  margin-left:10px;
+  margin-top: 15px;
+}
+
+.galleriesblock a
+{
+  border: 0px;
+}
+
+.galleriesblock img
+{
+  border: 0px;
+}
+
+.galTitleOut {
+  position: relative;
+  width: 180px;
+  height: 30px;
+  border: 1px solid #FEEECE;
+  background-color: #FEEECE;
+  padding: 0px;
+  margin-bottom: 10px;
+}
+.galTitleIn {
+  position: relative;
+  width: 178px;
+  height: 28px;
+  border: 1px solid #FED09E;
+  background-color: #FEEECE;
+  padding: 0px;
+  text-align: left;
+}
+
+.gall
+{
+  margin-left:auto;
+  margin-right:auto;
+  width: 680px;
+  border: 1px solid #FED09E;
+}
+
+.galthmtable td
+{
+  vertical-align:top;
+}
+.galdesctd
+{
+  text-align:left;
+}
+
+.folderentry
+{
+  margin-top:0px;
+  margin-bottom:10px;
+  color: #7C1C1E;
+}
+
+.folderentryl
+{
+  margin-top:0px;
+  margin-bottom:10px;
+  color: #7C1C1E;
+  width: 178px;
+}

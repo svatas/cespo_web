@@ -1,0 +1,100 @@
+/* obecne prvky */
+body
+{ margin: 0; padding: 0; color: #000; background: #FFF url('pozadi-hlavicky.gif') repeat-x 0 0; font-family: tahoma, arial, verdana, san-serif; }
+
+a:link, a:active, a:visited
+{ color: #666666; text-decoration: underline; } 
+
+a:hover
+{ text-decoration: none; }
+
+/* nadpis */
+#nazevgalerie
+{ margin-top: 16px; margin-bottom: 3px; color: #666666; font-size: 17px; line-height: 28px; }
+  
+#cervenacaranadpisu
+{ height: 5px; background: #E90000; }
+
+/* navigace */
+.rameceknavigace
+{ width: 1px; height: 132px; background: url('ramecek-navigace.gif') no-repeat 0 0; }
+
+div.zzpetoff, div.zzpet a
+{ display: block; width: 25px; height: 132px; background: url('tl-zzpet.gif') no-repeat 0 0; }
+  
+div.zzpet a:hover
+{ background-position: -25px 0; }
+ 
+div.zpetoff, div.zpet a
+{ display: block; width: 25px; height: 132px; background: url('tl-zpet.gif') no-repeat 0 0; }
+ 
+div.zpet a:hover
+{ background-position: -25px 0; }
+
+div.ddalsioff, div.ddalsi a
+{ display: block; width: 25px; height: 132px; background: url('tl-ddalsi.gif') no-repeat 0 0; }
+  
+div.ddalsi a:hover
+{ background-position: -25px 0; }
+  
+div.dalsioff, div.dalsi a
+{ display: block; width: 25px; height: 132px; background: url('tl-dalsi.gif') no-repeat 0 0; }
+  
+div.dalsi a:hover
+{ background-position: -25px 0; }
+
+#malenahledy
+{ margin: 0 8px 0 8px; }
+
+#malenahledy td
+{ width: 120px; height: 80px; background: #FFF; text-align:center; border: 1px solid #DDDDDD; }
+
+#malenahledy td:hover
+{ background: #F6F6F6; border: 1px solid #D1D1D1; }
+
+#malenahledy td.neaktivni:hover
+{ background: #FFF; border: 1px solid #DDDDDD; }
+  
+#strankovani
+{ color: #747474; font-size: 11px; text-align: center; line-height: 16px; }
+
+/* velke nahledy */
+#velkynahled
+{ margin-top: 34px; margin-bottom: 14px; border: 16px solid #EFEFEF; }
+
+#velkynahled td img
+{ margin: 16px; }
+
+#nazevobrazku
+{ margin: 16px 16px 0 16px; padding-left: 10px; color: #666666; background: url('nadpis-ctverec.gif') no-repeat 0 4px; font-size: 14px; font-weight: bold; }
+
+#popisobrazku
+{ margin: 0 16px 0 16px; color: #858585; font-size: 12px; }
+
+div.vlevooff, div.vlevo a
+{ display: block; width: 28px; height: 132px; background: url('tl-vlevo.gif') no-repeat 0 0; }
+  
+div.vlevo a:hover
+{ background-position: -28px 0; }
+
+div.vpravooff, div.vpravo a
+{ display: block; width: 28px; height: 132px; background: url('tl-vpravo.gif') no-repeat 0 0; }
+  
+div.vpravo a:hover
+{ background-position: -28px 0; }
+
+/* paticka */
+#paticka
+{ height: 48px; color: #858585; font-size: 10px; line-height: 16px; }
+
+#paticka td
+{ text-align: center; vertical-align: top; }
+
+.nazevslozky
+{ margin: 16px 16px 0 16px; padding-left: 10px; color: #666666; background: url('nadpis-ctverec.gif') no-repeat 0 4px; font-size: 14px; font-weight: bold; }
+
+.popisslozky
+{ margin: 0 16px 0 16px; color: #858585; font-size: 12px; }
+
+#tableslozky
+{ color: #747474; font-size: 11px; text-align: center; line-height: 16px; }

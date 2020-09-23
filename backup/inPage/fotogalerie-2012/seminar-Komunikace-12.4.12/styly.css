@@ -1,0 +1,165 @@
+body
+{ background: #000; font-family: tahoma, arial, verdana, san-serif; margin: 0; padding: 0; }
+
+a:link, a:active, a:visited
+{ color: #E8E8E8; text-decoration: none; }
+
+a:hover
+{ color: #E8E8E8; text-decoration: underline; }
+
+/* hlavicka */
+#hlavicka
+{ margin-bottom: 2px; height: 63px; background: url('pozadi-nazvu.jpg') repeat-x 0 0; }
+
+#nadpisgalerie
+{ padding-left: 22px; color: #FFF; font-weight: bold; font-size: 15px; }
+
+#nazevgalerie
+{ color: #A9A9A9; font-size: 12px; }
+
+/* navigace */
+.zarovnanivlevo
+{ float: left;  }
+
+.cistic
+{ clear: both; }
+
+.popiseknavigace
+{ padding: 6px 0 13px 7px; color: #E8E8E8; font-size: 9px; font-weight: bold; text-transform: uppercase; }
+
+.popiseknavigace span
+{ font-weight: normal; }
+
+div.domuoff, div.domu a
+{ display: block; width: 20px; height: 21px; background: url('tl-domu.gif') no-repeat 0 0; }
+  
+div.domu a:hover
+{ background-position: -20px 0; }
+
+div.zpetoff, div.zpet a
+{ margin-left: 18px; display: block; width: 20px; height: 21px; background: url('tl-zpet.gif') no-repeat 0 0; }
+  
+div.zpet a:hover
+{ background-position: -20px 0; }
+
+div.stahnoutoff, div.stahnout a
+{ margin-left: 18px; display: block; width: 20px; height: 21px; background: url('tl-stahnout.gif') no-repeat 0 0; }
+  
+div.stahnout a:hover
+{ background-position: -20px 0; }
+
+div.obrazekzpetoff, div.obrazekzpet a
+{ margin-top: 1px; display: block; width: 20px; height: 21px; background: url('tl-obrazek-zpet.gif') no-repeat 0 0; }
+
+div.obrazekzpet a:hover
+{ background-position: -20px 0; }
+
+div.obrazekdalsioff, div.obrazekdalsi a
+{ margin: 1px 0 0 5px; display: block; width: 20px; height: 21px; background: url('tl-obrazek-dalsi.gif') no-repeat 0 0; }
+
+div.obrazekdalsi a:hover
+{ background-position: -20px 0; }
+
+div.strankazpetoff, div.strankazpet a
+{ margin-top: 1px; display: block; width: 20px; height: 21px; background: url('tl-stranka-zpet.gif') no-repeat 0 0; }
+
+div.strankazpet a:hover
+{ background-position: -20px 0; }
+
+div.strankadalsioff, div.strankadalsi a
+{ margin: 1px 0 0 5px; display: block; width: 20px; height: 21px; background: url('tl-stranka-dalsi.gif') no-repeat 0 0; }
+
+div.strankadalsi a:hover
+{ background-position: -20px 0; }
+
+.ikonka
+{ padding: 6px 10px 13px 25px; }
+
+.popisekinfo
+{ padding: 6px 17px 13px 0; color: #7D7D7D; font-size: 9px; text-transform: uppercase; }
+
+.popisek
+{ padding: 4px 0 13px 0; color: #A7A7A7; font-size: 11px; }
+
+.oranzova
+{ color: #C96614; }
+
+.cervena
+{ color: #A33529; }
+
+/* obsah */
+#obsah
+{ padding: 10px; background: #262626; }
+
+.cernepozadi
+{ background: #000; }
+
+.cernepozadi img
+{ border: 10px solid #000; }
+
+.cernepozadin, .cernepozadina
+{ background: #000; text-align: center; vertical-align: middle; }
+
+.cernepozadis
+{ padding: 10px 12px 10px 12px; background: #000; text-align: left; vertical-align: top; }
+
+a.odkazgalerie:link, a.odkazgalerie:active, a.odkazgalerie:visited
+{ color: #FF7C0E; text-decoration: none; }
+
+a.odkazgalerie:hover
+{ color: #FF7C0E; text-decoration: underline; }
+
+.cernepozadin img
+{ border: 5px solid #000; }
+
+.cernepozadina img
+{ border: 5px solid #C9C9C9; }
+
+.oddelovacnahledu
+{ height: 6px; }
+
+.odsazeniexif
+{ padding: 10px 20px 10px 20px; }
+
+.odsazeniexif2
+{ padding: 10px 20px 10px 20px; }
+
+#nazevobrazku
+{ color: #FF7C0E; font-size: 14px; }
+
+#popisobrazku
+{ color: #999999; font-size: 11px; line-height: 18px; }
+
+#oddelovacexifu
+{ margin-bottom: 10px; background: url('oddelovac-exif.gif') repeat-y 0 0; }
+
+#exifnazev
+{ color: #C96614; font-size: 11px; line-height: 18px; }
+
+#exifparametry
+{ color: #C9C9C9; font-size: 11px; line-height: 18px; }
+
+/* paticka */
+#paticka
+{ margin-top: 2px; background: url('pozadi-paticky.jpg') repeat-x bottom left; }
+
+.textpaticky
+{ padding: 4px 10px 5px 10px; color: #656565; font-size: 10px; line-height: 18px; }
+
+td .textpaticky a:link
+{ color: #7D7D7D; text-decoration: underline; }
+
+td .textpaticky a:hover
+{ color: #AAA; text-decoration: none; }
+
+.copyrightvpravo
+{ float: right; width: 109px; }
+
+.nazevslozky
+{ color: #FF7C0E; font-size: 14px; }
+
+.popisslozky
+{ color: #999999; font-size: 11px; line-height: 18px; }
+
+#obsahslozky
+{ padding: 10px; background: #262626; }

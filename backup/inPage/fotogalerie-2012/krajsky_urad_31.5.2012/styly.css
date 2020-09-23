@@ -1,0 +1,224 @@
+body
+{ color: #FFF; background: #000; font-family: tahoma, arial, verdana, san-serif; text-align: center; margin: 0 auto; margin-bottom: 20px; }
+
+a
+{ color: #CD0000; text-decoration: underline; }
+
+a:hover
+{ text-decoration: none; }
+
+#nazevgalerie
+{ margin: 20px; color: #FFF; font-size: 20px; }
+
+
+/* horni navigace */  
+.navigace1
+{ width: 780px; height: 27px; }
+
+.hornirozek1
+{ width: 4px; height: 27px; background: url('horni-rozek-01.gif'); }
+  
+.tmavecervena
+{ background: url('tmavecervena.gif') repeat-x top left; text-align: center; }
+
+.bloktlacitka
+{ width: 96px; margin: 0 auto; }
+  
+.hornidomuoff, div.hornidomu a
+{ display: block; float: left; width: 32px; height: 27px; background: url('tl-horni-domu.gif') no-repeat 0 0; }
+
+div.hornidomu a:hover
+{ background-position: -32px 0; }
+  
+.hornivysoff, div.hornivys a
+{ display: block; float: left; width: 32px; height: 27px; background: url('tl-horni-vys.gif') no-repeat 0 0; }
+
+div.hornivys a:hover
+{ background-position: -32px 0; }
+
+.horniarchivoff, div.horniarchiv a
+{ display: block; float: left; width: 32px; height: 27px; background: url('tl-horni-archiv.gif') no-repeat 0 0; }
+
+div.horniarchiv a:hover
+{ background-position: -32px 0; }
+      
+.hornirozek2
+{ width: 4px; height: 27px; background: url('horni-rozek-02.gif'); }
+
+.navigace2
+{ width: 780px; height: 26px; margin-bottom: 8px; }
+
+.hornirozek3
+{ width: 2px; height: 26px; background: url('horni-rozek-03.gif'); }
+
+div.zzpetoff, div.zzpet a
+{ display: block; width: 32px; height: 26px; background: url('tl-horni-zzpet.gif') no-repeat 0 0; }
+
+div.zzpet a:hover
+{ background-position: -32px 0; }
+
+div.zpetoff, div.zpet a
+{ display: block; width: 32px; height: 26px; background: url('tl-horni-zpet.gif') no-repeat 0 0; }
+
+div.zpet a:hover
+{ background-position: -32px 0; }
+    
+.hornirozek4
+{ width: 7px; height: 26px; background: url('horni-rozek-04.gif'); }
+
+.sirkatlacitka
+{ width: 32px; }
+ 
+.svetlecervena
+{ color: #F6D1D1; font-size: 11px; background: url('svetlecervena.gif') repeat-x top left; text-align: center; }
+
+.svetlecervena span
+{ color: #FFF; }
+
+.hornirozek5
+{ width: 7px; height: 26px; background: url('horni-rozek-05.gif'); }
+ 
+div.dalsioff, div.dalsi a
+{ display: block; width: 32px; height: 26px; background: url('tl-horni-dalsi.gif') no-repeat 0 0; }
+
+div.dalsi a:hover
+{ background-position: -32px 0; }
+
+div.ddalsioff, div.ddalsi a
+{ display: block; width: 32px; height: 26px; background: url('tl-horni-ddalsi.gif') no-repeat 0 0; }
+
+div.ddalsi a:hover
+{ background-position: -32px 0; }
+
+.hornirozek6
+{ width: 2px; height: 26px; background: url('horni-rozek-06.gif'); }
+
+/* odkazy na vnorene galerie */
+.galerie
+{ width: 780px; background: #1A1A1A; border-spacing: 10px; }
+
+.galerie td
+{ vertical-align: top; }
+
+/* obsah s obrazky */  
+.obsah
+{ width: 780px; background: #1A1A1A; }
+
+.obsahrozky
+{ width: 780px; height: 4px; background: #1A1A1A; }
+
+.obsah td
+{ width: 140px; height: 140px; background: #313131; text-align: center; vertical-align: middle; }
+
+.obsah td.neaktivnisto
+{ width: 100%; text-align: center; vertical-align: middle; }
+
+.obsah td:hover
+{ background: #5F5F5F; }
+
+.obsah td.neaktivni:hover, .obsah td.neaktivnisto:hover 
+{ background: #313131; }
+
+/* obsah s exif daty */
+#exifdata
+{ width: 780px; background: #1A1A1A; font-size: 11px; line-height: 20px; }
+
+#exifnadpis
+{ color: #6A6A6A; padding: 0 10px 5px 10px; font-size: 13px; }
+
+#exifpodtrzeni
+{ height: 10px; background: url('podtrzeni.gif') repeat-x 0 0; }
+
+.exifpolozka
+{ width: 120px; color: #989898; padding-left: 10px; vertical-align: top; }
+
+.exiftext
+{ color: #C6C6C6; vertical-align: top; }
+
+#exifjmeno
+{ color: #E55500; font-weight: bold; vertical-align: top; }
+
+
+/* dolni navigace */  
+.navigace3
+{ width: 780px; height: 26px; margin-top: 8px; }
+
+.spodnirozek1
+{ width: 2px; height: 26px; background: url('spodni-rozek-01.gif'); }
+
+div.szzpetoff, div.szzpet a
+{ display: block; width: 32px; height: 26px; background: url('tl-spodni-zzpet.gif') no-repeat 0 0; }
+
+div.szzpet a:hover
+{ background-position: -32px 0; }
+
+div.szpetoff, div.szpet a
+{ display: block; width: 32px; height: 26px; background: url('tl-spodni-zpet.gif') no-repeat 0 0; }
+
+div.szpet a:hover
+{ background-position: -32px 0; }
+
+.spodnirozek2
+{ width: 7px; height: 26px; background: url('spodni-rozek-02.gif'); }
+
+.ssvetlecervena
+{ color: #F6D1D1; font-size: 11px; background: url('ssvetlecervena.gif') repeat-x top left; text-align: center; }
+
+.ssvetlecervena span
+{ color: #FFF; }
+
+.spodnirozek3
+{ width: 7px; height: 26px; background: url('spodni-rozek-03.gif'); }
+ 
+div.sdalsioff, div.sdalsi a
+{ display: block; width: 32px; height: 26px; background: url('tl-spodni-dalsi.gif') no-repeat 0 0; }
+
+div.sdalsi a:hover
+{ background-position: -32px 0; }
+
+div.sddalsioff, div.sddalsi a
+{ display: block; width: 32px; height: 26px; background: url('tl-spodni-ddalsi.gif') no-repeat 0 0; }
+
+div.sddalsi a:hover
+{ background-position: -32px 0; }
+
+.spodnirozek4
+{ width: 2px; height: 26px; background: url('spodni-rozek-04.gif'); }
+
+.spodnirozek5
+{ width: 4px; height: 27px; background: url('spodni-rozek-05.gif'); }
+
+.stmavecervena
+{ background: url('stmavecervena.gif') repeat-x top left; text-align: center; }
+
+.spodnidomuoff, div.spodnidomu a
+{ display: block; float: left; width: 32px; height: 27px; background: url('tl-spodni-domu.gif') no-repeat 0 0; }
+
+div.spodnidomu a:hover
+{ background-position: -32px 0; }
+  
+.spodnivysoff, div.spodnivys a
+{ display: block; float: left; width: 32px; height: 27px; background: url('tl-spodni-vys.gif') no-repeat 0 0; }
+
+div.spodnivys a:hover
+{ background-position: -32px 0; }
+
+.spodniarchivoff, div.spodniarchiv a
+{ display: block; float: left; width: 32px; height: 27px; background: url('tl-spodni-archiv.gif') no-repeat 0 0; }
+
+div.spodniarchiv a:hover
+{ background-position: -32px 0; }
+
+.spodnirozek6
+{ width: 4px; height: 27px; background: url('spodni-rozek-06.gif'); }
+
+
+/* copyright */  
+#copyright
+{ margin: 20px; color: #8C8C8C; font-size: 10px; line-height: 17px; }
+
+#copyright a
+{ color: #CD0000; text-decoration: underline; }
+
+#copyright a:hover
+{ text-decoration: none; }

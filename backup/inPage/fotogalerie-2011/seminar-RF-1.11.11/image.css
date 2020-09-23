@@ -1,0 +1,96 @@
+body {
+  background-color: #DDDDDD;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  border: 0px;
+  text-align: center;
+}
+.all {
+  text-align: left;
+  width: 600px;
+  border: 0px;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.titleOut {
+  position: relative;
+  width: 600px;
+  height: 30px;
+  padding: 0px;
+  margin-bottom: 10px;
+}
+.titleIn {
+  position: relative;
+  width: 598px;
+  height: 28px;
+  background-image: url(image_title.jpg);
+  padding: 0px;
+  text-align: left;
+}
+.titleText {
+  font-size: 12px;
+  font-family: Verdana, "Helvetica CE", "Arial CE", Helvetica, Arial, sans-serif;
+  color: #35543D;
+  font-weight: 400;
+  font-decoration: none;
+}
+
+.obrazek {
+  position: relative;
+  text-align: center;
+  width: 600px;
+}
+
+.titleText a {
+  text-decoration: none;
+  color: #35543D;
+}
+.titleText a:visited {
+  text-decoration: none;
+  color: #35543D;
+}
+.titleText a:active {
+  text-decoration: none;
+  color: #35543D;
+}
+.titleText a:hover {
+  text-decoration: none;
+  color: #F58345;
+}
+
+.popisek {
+  font-size: 12px;
+  font-family: Verdana, "Helvetica CE", "Arial CE", Helvetica, Arial, sans-serif;
+  color: #35543D;
+  font-weight: 400;
+  font-decoration: none;
+
+  position: relative;
+  clear: both;
+  width; 600px;
+  margin-top: 15px;
+  border-top: 1px solid #35543D;
+  padding-top: 10px;
+}
+
+.paticka {
+  font-size: 12px;
+  font-size: 10px;
+  font-family: Verdana, "Helvetica CE", "Arial CE", Helvetica, Arial, sans-serif;
+  color: #35543D;
+  font-weight: 400;
+  font-decoration: none;
+  text-align: center;
+
+  position: relative;
+  clear: both;
+  width; 600px;
+  margin-top: 15px;
+  border-top: 1px solid #35543D;
+  padding-top: 10px;
+}
+
+

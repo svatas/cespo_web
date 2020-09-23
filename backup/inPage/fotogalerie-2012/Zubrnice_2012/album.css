@@ -1,0 +1,16 @@
+body {
+  font-family: Tahoma, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  background-color: #FEEECE;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4px;
+  margin-bottom: 0px;
+  border: 0px;
+  text-align: center;
+}
+
+td {
+  font-family: Tahoma, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+}

@@ -1,0 +1,156 @@
+body {
+  background-color: #DDDDDD;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  border: 0px;
+  text-align: center;
+}
+.all {
+  text-align: left;
+  width: 640px;
+  border: 0px;
+  margin-top: 15px;
+  margin-left: 0px;
+  margin-right: auto;
+}
+
+.titleOut {
+  position: relative;
+  width: 640px;
+  height: 30px;
+  padding: 0px;
+  margin-bottom: 10px;
+}
+.titleIn {
+  position: relative;
+  width: 638px;
+  height: 28px;
+  background-image: url(album_title.jpg);
+  padding: 0px;
+  text-align: left;
+}
+.titleText {
+  font-size: 12px;
+  font-family: Verdana, "Helvetica CE", "Arial CE", Helvetica, Arial, sans-serif;
+  color: #35543D;
+  font-weight: 400;
+  font-decoration: none;
+}
+
+.nahled {
+  font-size: 12px;
+  font-family: Verdana, "Helvetica CE", "Arial CE", Helvetica, Arial, sans-serif;
+  color: #35543D;
+  font-weight: 400;
+  font-decoration: none;
+
+  position: relative;
+  float: left;
+  text-align: center;
+  margin-bottom: 15px;
+  width: 160px;
+  height: 164px;
+  border: 0px;
+  overflow: clip;
+}
+
+.titleText a {
+  text-decoration: none;
+  color: #35543D;
+}
+.titleText a:visited {
+  text-decoration: none;
+  color: #35543D;
+}
+.titleText a:active {
+  text-decoration: none;
+  color: #35543D;
+}
+.titleText a:hover {
+  text-decoration: none;
+  color: #F58345;
+}
+
+.paticka {
+  font-size: 10px;
+  font-family: Verdana, "Helvetica CE", "Arial CE", Helvetica, Arial, sans-serif;
+  color: #35543D;
+  font-weight: 400;
+  font-decoration: none;
+  text-align: center;
+
+  position: relative;
+  clear: both;
+  width; 600px;
+  margin-top: 15px;
+  border-top: 1px solid #35543D;
+  padding-top: 10px;
+}
+
+.galleriesblock
+{
+  float: left; 
+  margin-left:10px;
+  margin-top: 15px;
+}
+
+.galleriesblock a
+{
+  border: 0px;
+}
+
+.galleriesblock img
+{
+  border: 0px;
+}
+
+.galTitleOut {
+  position: relative;
+  width: 180px;
+  height: 30px;
+  background-color: #DDDDDD;
+  padding: 0px;
+  margin-bottom: 10px;
+}
+.galTitleIn {
+  position: relative;
+  width: 178px;
+  height: 28px;
+  background-color: #DDDDDD;
+  background-image: url(album_galtitle.jpg);
+  padding: 0px;
+  text-align: left;
+}
+
+.gall
+{
+  margin-left:auto;
+  margin-right:auto;
+  width: 640px;
+  border: 1px solid #DDDDDD;
+}
+
+.galthmtable td
+{
+  vertical-align:top;
+}
+.galdesctd
+{
+  text-align:left;
+}
+
+.folderentry
+{
+  margin-top:0px;
+  margin-bottom:10px;
+  color: #35543D;
+}
+
+.folderentryl
+{
+  margin-top:0px;
+  margin-bottom:10px;
+  color: #35543D;
+  width: 178px;
+}
